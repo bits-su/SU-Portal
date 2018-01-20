@@ -1,0 +1,8 @@
+# Create a new User "suportal" with password "suportal" and new database "suportal"
+
+read -s -p "Enter MySQL root password : " PASSWORD
+
+mysql -u root -p${PASSWORD} -e "CREATE USER suportal@localhost identified by 'suportal';"
+mysql -u root -p${PASSWORD} -e "CREATE DATABASE suportal;"
+mysql -u root -p${PASSWORD} -e "GRANT ALL PRIVILEGES ON suportal.* TO suportal@localhost;"
+mysql -u root -p${PASSWORD} -e "FLUSH PRIVILEGES;"
