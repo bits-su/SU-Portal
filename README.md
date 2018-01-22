@@ -1,4 +1,5 @@
 # suportal
+
 Student Union Portal
 
 ## Dev docs
@@ -16,3 +17,8 @@ To deactivate the virtualenv: `deactivate`.
 
 Also, whenever a new dependency is added to the `requirements.txt`
 file, you will need to run `tools/setup` again.
+
+## Discussion
+
+We hang out on https://crux-bphc.slack.com stream #suportal. Well,
+what can we say, you be be in the crux to be the crux.
