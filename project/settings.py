@@ -26,7 +26,7 @@ SECRET_KEY = 'ds8_nk90fi0e5*btrwuf(phh7#$v7+l_x@8z#kh@-x^+kbw3-f'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+AUTH_USER_MODEL = 'app.User'
 
 # Application definition
 
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'app',
 ]
 
 MIDDLEWARE = [
@@ -54,7 +55,7 @@ ROOT_URLCONF = 'project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(os.getcwd(),'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
