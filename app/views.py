@@ -6,6 +6,10 @@ from django.http import HttpResponse
 def index(request):
     return HttpResponse("Hello, world.")
 
+
+def home(request):
+    return render(request,'home.html')
+
 def show_user_info(request, user_id):
     # Sample view. Renders template to display user details.
     # Create new user from admin portal /admin/

@@ -1,0 +1,37 @@
+*{
+    margin:0;
+    padding:0;
+}
+.wrapper{
+    display:flex;
+    flex-direction:column;
+}
+.top-bar{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style-type:none;
+    margin:2em 12.5em 2em 12.5em;
+}
+.static{
+    display:flex;
+    flex-direction: row;
+}
+.side-bar{
+    display:inline-flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.side-bar > ul{
+    list-style-type: none;
+    margin:2em 3em 2em 1em;
+}
+.side-bar > ul > li{
+    margin:1em;
+}
+.content{
+    display:flex;
+    flex: 4;
+    justify-content:center;
+    align-items:center;
+}
