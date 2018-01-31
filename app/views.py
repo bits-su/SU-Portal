@@ -1,10 +1,19 @@
 from django.shortcuts import render
 from .models import User
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import logout
 
 from django.http import HttpResponse
 
+@login_required
 def index(request):
-    return HttpResponse("Hello, world.")
+    user_email = request.user.email
+    if(not user_email.endswith('hyderabad.bits-pilani.ac.in')):
+        logout(request)
+        User.objects.filter(email=user_email).delete()
+        return index(request)
+    else:
+        return HttpResponse("Hello, " + request.user.username)
 
 
 def home(request):

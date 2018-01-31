@@ -1,4 +1,5 @@
 Django==2.0
 mysqlclient
 Pillow
+social-auth-app-django==2.1
 

@@ -1,0 +1,13 @@
+{% extends 'admin/base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Login</button>
+  </form>
+  <br/>
+  <a href="{% url 'social:begin' 'google-oauth2' %}">Login with Google</a><br>
+{% endblock %}
