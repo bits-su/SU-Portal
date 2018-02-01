@@ -1,0 +1,19 @@
+{% extends 'base.html'%}
+
+
+{% block content %}
+ABOUT US
+	{% if members %}
+	<ul>
+		{% for member in members%}
+		<li>{{member.username}}</li>
+		<li>{{member.first_name}} {{member.last_name}}</li>
+		<li>{{member.phone}}</li>
+		<li>{{member.image}}</li>
+		{% endfor %}
+	</ul>
+
+	{% else %}
+		<strong>There are no contacts in the list</strong>
+	{% endif %}
+{% endblock %}	
