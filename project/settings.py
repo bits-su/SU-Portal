@@ -136,7 +136,7 @@ AUTHENTICATION_BACKENDS = [
 
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
-LOGIN_REDIRECT_URL = 'index'
+LOGIN_REDIRECT_URL = 'home'
 
 # TODO : This cannot remain here for long.
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '210720000681-28ucdv0pr191tmbcpdhq8dnfl58mrfd3.apps.googleusercontent.com'

@@ -6,18 +6,14 @@ from django.template import RequestContext
 from django.http import HttpResponse
 
 @login_required
-def index(request):
+def home(request):
     user_email = request.user.email
     if(not user_email.endswith('hyderabad.bits-pilani.ac.in')):
         logout(request)
         User.objects.filter(email=user_email).delete()
-        return index(request)
+        return home(request)
     else:
-        return HttpResponse("Hello, " + request.user.username)
-
-
-def home(request):
-    return render(request,'home.html')
+        return render(request,'home.html')
 
 def show_user_info(request, user_id):
     # Sample view. Renders template to display user details.
