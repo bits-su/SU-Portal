@@ -13,5 +13,11 @@ class User(AbstractUser):
                 message='Only 10 digit integer allowed',),]
             )
 
+class Complaint(models.Model):
+    complaint_id = models.AutoField(primary_key=True)
+    title = models.CharField(max_length=50,unique=False)
+    complaint = models.TextField(max_length=3000,unique=False)
+    uploadedby = models.ForeignKey(User,verbose_name="complaint-logger",on_delete=models.CASCADE)
+
 # TODO: Add functionality to display post of SU members.
-#       Probably another model('postholders') with OneToOne connection to User 
+#       Probably another model('postholders') with OneToOne connection to User

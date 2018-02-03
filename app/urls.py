@@ -6,4 +6,6 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('app/<int:user_id>/', views.show_user_info),
     path('contact/', views.contact, name='contact'),
+    path('complaints/',views.complaints, name='complaints'),
+    path('submit_complaint',views.submit_complaint, name='submit-complaint'),
 ]
