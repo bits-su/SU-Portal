@@ -37,8 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     'app',
     'social_django',
+    'simpleticket'
 ]
 
 MIDDLEWARE = [
@@ -125,6 +127,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
+STATIC_ROOT = 'static'
 STATIC_URL = '/static/'
 
 AUTHENTICATION_BACKENDS = [
@@ -141,3 +144,5 @@ LOGIN_REDIRECT_URL = 'home'
 # TODO : This cannot remain here for long.
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '210720000681-28ucdv0pr191tmbcpdhq8dnfl58mrfd3.apps.googleusercontent.com'
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'PfsiBNUowe3_V5typ3zRP5lr'
+MEDIA_ROOT = 'media'
+MEDIA_URL = '/media/'

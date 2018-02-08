@@ -3,7 +3,17 @@ from .models import User, Complaint
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
 from django.template import RequestContext
+
+from django.http import HttpResponseRedirect
 from django.http import HttpResponse
+from django.core.mail import send_mail
+from django import forms
+from django.urls import reverse
+
+
+from .models import User
+
+from .models import User
 
 from .forms import ComplaintForm
 
@@ -18,6 +28,10 @@ def home(request):
     else:
         return render(request,'home.html')
     # return render(request,'home.html')
+
+
+def home(request):
+    return render(request,'home.html')
 
 def show_user_info(request, user_id):
     # Sample view. Renders template to display user details.
