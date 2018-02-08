@@ -61,3 +61,5 @@ def submit_complaint(request):
         return HttpResponse("Submitted")
     else:
         return HttpResponse("login plis")
+def calendar(request):
+    return render(request, 'calendar.html')
