@@ -55,11 +55,8 @@
     <div id="create-ticket-div">
         <button id="project-view-button" class="btn ticket-button">Project View</button>
         <button id="view-all-button" class="btn ticket-button" {% if filter == 'All' %}disabled="disabled"{% endif %}>All Tickets</button>
-        <button id="create-ticket-button" class="btn btn-success ticket-button">Create New Ticket</button>
+        <button id="create-ticket-button" class="btn btn-success ticket-button"><a href="/tickets/new/">Create New Ticket</a></button>
         <script type="text/javascript">
-            $("#create-ticket-button").click(function() {
-                window.location.href = "/tickets/new/";
-            });
             $("#view-all-button").click(function() {
                 window.location.href = "/tickets/";
             });
