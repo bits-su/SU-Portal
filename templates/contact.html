@@ -1,18 +1,19 @@
 {% extends 'base.html'%}
 
 {% block title %}
-    <title>Contact Us - SU Portal</title>
+    <title>Contact Details - SU Portal</title>
 {% endblock %}
 
 {% block content %}
-ABOUT US
+<h1>ABOUT US</h1>
 	{% if members %}
 	<ul>
 		{% for member in members%}
-		<li>{{member.username}}</li>
-		<li>{{member.first_name}} {{member.last_name}}</li>
-		<li>{{member.phone}}</li>
-		<li>{{member.image}}</li>
+		<li>
+			<h3>{{member.first_name}} {{member.last_name}}</h3>
+			<p>{{member.phone}}</p>
+			<img src="{{member.image}}">
+		</li>
 		{% endfor %}
 	</ul>
 
