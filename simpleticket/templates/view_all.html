@@ -50,7 +50,7 @@
     {% if tickets.object_list.count > 0 %}
         <table class="table-viewall table-striped table-bordered table-hover">
             <thead>
-                <tr class="list-head">
+                <tr class="list-head-viewall">
                     <td><a href="{{ base_url }}&show_closed={{ show_closed }}&sort=id{% if sort != 'id' or order == 'dsc' %}&order=asc{% else %}&order=dsc{% endif %}">
                         ID
                         {% if sort == 'id' and order == 'dsc' %}<span style="font-size: 8pt;">&#x25B2;</span>{% endif %}
@@ -75,7 +75,7 @@
             </thead>
             <tbody>
                 {% for ticket in tickets.object_list %}
-                    <tr class="{% cycle 'odd' 'even' %}">
+                    <tr id="table-content-viewall" class="{% cycle 'odd' 'even' %}">
                         <td>{{ ticket.id }}</td>
                         <td  class="ticket-name-viewall"><a href="/tickets/view/{{ ticket.id }}/">{{ ticket.name }}</a></td>
                         <td><a href="/tickets/?priority={{ ticket.priority.id }}" style="color: {{ ticket.priority.display_color }};">{{ ticket.priority.name }}</a></td>

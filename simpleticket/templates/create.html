@@ -50,7 +50,7 @@
                         {% endfor %}
                     </select>
                 </div>
-                <div class="form-group">
+                <div class="form-group-update">
                     <label for="priority">Priority</label>
                     <select id="priority"  name="priority" class="form-control">
                         {% for priority in priority_list %}
@@ -60,7 +60,7 @@
                 </div>
             </div>
             <div class="col-md-3 hidden">
-                <div class="form-group">
+                <div class="form-group-update">
                     <label for="status">Status</label>
                     <select id="status"  name="status" class="form-control">
                         {% for status in status_list %}
@@ -68,7 +68,7 @@
                         {% endfor %}
                     </select>
                 </div>
-                <div class="form-group">
+                <div class="form-group-update">
                     <label for="assigned">Assigned to</label>
                     <select id="assigned"  name="assigned" selected="selected" class="form-control">
                         <option value="unassigned">Unassigned</option>

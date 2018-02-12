@@ -115,7 +115,7 @@
         
     <div class="ticket-comments-view">
             <p style="font-size:1.5em; padding-bottom:1em;">Ticket Comments</p> 
-            <div class="add-comment">
+            <div class="add-comment-view">
                     <h4 style="font-size:1.25em;">Comment on Ticket</h4><br>
                     <form method="POST" action="/tickets/submit_comment/{{ ticket.id }}/">
                         {% csrf_token %}
@@ -144,7 +144,7 @@
             {% for comment in ticket_comments.object_list %}
                 <div class="row ticket-comment-main {% cycle 'even' 'odd' %}">
                         {% if user == comment.commenter %}
-                        <div class="delete-comment" title="Delete Comment"><a href="/tickets/delete_comment/{{ comment.id }}/" onclick="JavaScript:return deleteComment({{ comment.id }});"> &#215;</a></div>
+                        <div class="delete-comment-view" title="Delete Comment"><a href="/tickets/delete_comment/{{ comment.id }}/" onclick="JavaScript:return deleteComment({{ comment.id }});"> &#215;</a></div>
                     {% endif %}   
                     <div class="col-md-9 comment-text">{{ comment.text|safe|linebreaksbr }}</div>
                     <div class=" col-md-3 comment-info ticket-comment-details-view">
