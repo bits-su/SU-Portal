@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+BASEDIR=`dirname $0`/..
+
+source $BASEDIR/env/bin/activate
+export PYTHONPATH=$BASEDIR/env/dep
+python manage.py runserver 0.0.0.0:5020
