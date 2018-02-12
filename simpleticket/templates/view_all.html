@@ -1,30 +1,5 @@
 {% extends "base.html" %}
-{% block title %}List Tickets - {{ filter }} ({{ tickets.paginator.count }}){% endblock %}
-{% block pagename %}List Tickets - {{ filter }} ({{ tickets.paginator.count }}){% endblock %}
-
 {% block head %}
-    {% load static %}
-    <style type="text/css">
-        .filter-message {
-            font-size: 12pt;
-            float: left;
-        }
-        .show-closed {
-            float: right;
-        }
-        .pagination {
-            float: left;
-            font-size: 9pt;
-        }
-        #create-ticket-div {
-            float: right;
-            background-color: black;
-        }
-        .content table {
-            background-color: white;
-            font-size: 12pt;
-        }
-    </style>
     <script type="text/javascript">
         $(document).ready(function() {
             $("#topnav-tickets").addClass("active");
@@ -73,7 +48,7 @@
     </div>
     <br>
     {% if tickets.object_list.count > 0 %}
-        <table class="table table-striped table-bordered table-hover">
+        <table class="table-viewall table-striped table-bordered table-hover">
             <thead>
                 <tr class="list-head">
                     <td><a href="{{ base_url }}&show_closed={{ show_closed }}&sort=id{% if sort != 'id' or order == 'dsc' %}&order=asc{% else %}&order=dsc{% endif %}">
@@ -81,30 +56,15 @@
                         {% if sort == 'id' and order == 'dsc' %}<span style="font-size: 8pt;">&#x25B2;</span>{% endif %}
                         {% if sort == 'id' and order == 'asc' %}<span style="font-size: 8pt;">&#x25BC;</span>{% endif %}
                     </a></td>
-                    <td><a href="{{ base_url }}&show_closed={{ show_closed }}&sort=name{% if sort != 'name' or order == 'dsc' %}&order=asc{% else %}&order=dsc{% endif %}">
+                    <td class="ticket-name-viewall"><a href="{{ base_url }}&show_closed={{ show_closed }}&sort=name{% if sort != 'name' or order == 'dsc' %}&order=asc{% else %}&order=dsc{% endif %}">
                         Name
                         {% if sort == 'name' and order == 'dsc' %}<span style="font-size: 8pt;">&#x25B2;</span>{% endif %}
                         {% if sort == 'name' and order == 'asc' %}<span style="font-size: 8pt;">&#x25BC;</span>{% endif %}
-                    </a></td>
-                    <td><a href="{{ base_url }}&show_closed={{ show_closed }}&sort=project{% if sort != 'project' or order == 'dsc' %}&order=asc{% else %}&order=dsc{% endif %}">
-                        Project
-                        {% if sort == 'project' and order == 'dsc' %}<span style="font-size: 8pt;">&#x25B2;</span>{% endif %}
-                        {% if sort == 'project' and order == 'asc' %}<span style="font-size: 8pt;">&#x25BC;</span>{% endif %}
                     </a></td>
                     <td><a href="{{ base_url }}&show_closed={{ show_closed }}&sort=priority{% if sort != 'priority' or order == 'dsc' %}&order=asc{% else %}&order=dsc{% endif %}">
                         Priority
                         {% if sort == 'priority' and order == 'dsc' %}<span style="font-size: 8pt;">&#x25B2;</span>{% endif %}
                         {% if sort == 'priority' and order == 'asc' %}<span style="font-size: 8pt;">&#x25BC;</span>{% endif %}
-                    </a></td>
-                    <td><a href="{{ base_url }}&show_closed={{ show_closed }}&sort=status{% if sort != 'status' or order == 'dsc' %}&order=asc{% else %}&order=dsc{% endif %}">
-                        Status
-                        {% if sort == 'status' and order == 'dsc' %}<span style="font-size: 8pt;">&#x25B2;</span>{% endif %}
-                        {% if sort == 'status' and order == 'asc' %}<span style="font-size: 8pt;">&#x25BC;</span>{% endif %}
-                    </a></td>
-                    <td><a href="{{ base_url }}&show_closed={{ show_closed }}&sort=assigned{% if sort != 'assigned' or order == 'dsc' %}&order=asc{% else %}&order=dsc{% endif %}">
-                        Assigned
-                        {% if sort == 'assigned' and order == 'dsc' %}<span style="font-size: 8pt;">&#x25B2;</span>{% endif %}
-                        {% if sort == 'assigned' and order == 'asc' %}<span style="font-size: 8pt;">&#x25BC;</span>{% endif %}
                     </a></td>
                     <td><a href="{{ base_url }}&show_closed={{ show_closed }}&sort=updated{% if sort != 'updated' or order == 'dsc' %}&order=asc{% else %}&order=dsc{% endif %}">
                         Updated
@@ -117,15 +77,8 @@
                 {% for ticket in tickets.object_list %}
                     <tr class="{% cycle 'odd' 'even' %}">
                         <td>{{ ticket.id }}</td>
-                        <td><a href="/tickets/view/{{ ticket.id }}/">{{ ticket.name }}</a></td>
-                        <td><a href="/tickets/?project={{ ticket.project.id }}">{{ ticket.project.name }}</a></td>
+                        <td  class="ticket-name-viewall"><a href="/tickets/view/{{ ticket.id }}/">{{ ticket.name }}</a></td>
                         <td><a href="/tickets/?priority={{ ticket.priority.id }}" style="color: {{ ticket.priority.display_color }};">{{ ticket.priority.name }}</a></td>
-                        <td><a href="/tickets/?status={{ ticket.status.id }}">{{ ticket.status }}</a></td>
-                        {% if ticket.assigned_to %}
-                            <td><a href="/tickets/?assigned_to={{ ticket.assigned_to.id }}">{{ ticket.assigned_to }}</a></td>
-                        {% else %}
-                            <td><a href="/tickets/?assigned_to=unassigned">Unassigned</a></td>
-                        {% endif %}
                         <td>{{ ticket.update_time }}</td>
                     </tr>
                 {% endfor %}

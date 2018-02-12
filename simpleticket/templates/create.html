@@ -1,6 +1,4 @@
 {% extends "base.html" %}
-{% block title %}Create Ticket{% endblock %}
-{% block pagename %}Create Ticket{% endblock %}
 
 {% block head %}
     <script src="/static/ckeditor/ckeditor.js"></script>
@@ -28,27 +26,22 @@
 {% endblock %}
 
 {% block content %}
-    <div id="create-ticket-div">
-        <button id="project-view-button" class="btn ticket-button">Project View</button>
-        <button id="view-all-button" class="btn ticket-button">All Tickets</button>
-        <button id="create-ticket-button" class="btn btn-success ticket-button" disabled="disabled">Create New Ticket</button>
+    <div id="create-ticket-div-update">
+        <div class="col-md-6 ticket-view">
+            <button id="view-all-button" class="btn ticket-button">All Complaints</button>        
+            <div style="font-size:20px;"><a href="/tickets/?user={{ user.id }}">View My Complaints</a></div>
+        </div>
         <script type="text/javascript">
-            $("#create-ticket-button").click(function() {
-                window.location.href = "/tickets/new/";
-            });
             $("#view-all-button").click(function() {
                 window.location.href = "/tickets/";
-            });
-            $("#project-view-button").click(function() {
-                window.location.href = "/tickets/project/";
             });
         </script>
     </div>
 
-    <form action="/tickets/submit_ticket/" method="POST">
+    <form class="form-update" action="/tickets/submit_ticket/" method="POST">
         {% csrf_token %}
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-3 hidden">
                 <div class="form-group">
                     <label for="project">Project</label>
                     <select id="project"  name="project" class="form-control">
@@ -66,7 +59,7 @@
                     </select>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 hidden">
                 <div class="form-group">
                     <label for="status">Status</label>
                     <select id="status"  name="status" class="form-control">
@@ -85,22 +78,13 @@
                     </select>
                 </div>
             </div>
-            <div class="col-md-6" style="text-align: right;">
-                [ <a href="/tickets/">View All Tickets</a> ]<br/>
-                [ <a href="/tickets/?user={{ user.id }}">View My Tickets</a> ]
-            </div>
         </div>
 
-        <div class="form-group">
-            <label for="name">Summary</label>
-            <input type="text" name="name" id="name" value="{{ name }}" class="form-control"/>
-        </div>
-
-        <div class="form-group">
-            <label for="desc">Description</label>
-            <textarea name="desc" id="desc" class="form-control"></textarea>
-        </div>
-
-        <input type="submit" class="btn btn-primary btn-lg" value="Submit Ticket" />
+        <div class="form-group-update">
+            <label for="name">Complaint-topic</label>
+            <input style="font-size:0.8em;" type="text" name="name" id="name" value="{{ name }}" class="form-control"/><br>
+            <label for="desc">Description</label><br><br>
+            <textarea style="width:100%;font-size:0.8em;" name="desc" id="desc" class="form-control"></textarea>
+            <input style="font-size:0.8em;" type="submit" class="btn btn-primary btn-lg" value="Submit Ticket" />
     </form>
 {% endblock %}

@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # 'django.contrib.sites',
     'app',
+    'materialize',
     'social_django',
     'simpleticket'
 ]

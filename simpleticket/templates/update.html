@@ -1,6 +1,4 @@
 {% extends "base.html" %}
-{% block title %}Update Ticket: {{ ticket.id }}{% endblock %}
-{% block pagename %}Update Ticket: {{ ticket.id }}{% endblock %}
 
 {% block head %}
     <style type="text/css">
@@ -30,14 +28,15 @@
 {% endblock %}
 
 {% block content %}
-    <div id="create-ticket-div">
-        <button id="project-view-button" class="btn ticket-button">Project View</button>
-        <button id="view-all-button" class="btn ticket-button">All Tickets</button>
-        <button id="create-ticket-button" class="btn btn-success ticket-button">Create New Ticket</button>
+    <div id="create-ticket-div-update">
+        <div class="col-md-6 ticket-view">
+            <button id="view-all-button" class="btn ticket-button">All Tickets</button>
+            <button id="create-ticket-button" class="btn btn-success ticket-button">Create New Ticket</button>
+            <div style="font-size:20px;"><a href="/tickets/">View All Tickets</a></div>
+            <div style="font-size:20px;"><a href="/tickets/?user={{ user.id }}">View My Tickets</a></div>
+            <div style="font-size:20px;"><a href="/tickets/view/{{ ticket.id }}/">View Ticket</a></div> 
+        </div>
         <script type="text/javascript">
-            $("#create-ticket-button").click(function() {
-                window.location.href = "/tickets/new/";
-            });
             $("#view-all-button").click(function() {
                 window.location.href = "/tickets/";
             });
@@ -46,64 +45,57 @@
             });
         </script>
     </div>
-    <form action="/tickets/update_ticket/{{ ticket.id }}/" method="POST">
-        {% csrf_token %}
-        <div class="row">
-            <div class="col-md-3">
-                <div class="form-group">
-                    <label for="project">Project</label>
-                    <select id="project"  name="project" class="form-control">
-                        {% for project in project_list %}
-                            <option value="{{ project.id }}" {% if ticket.project.id == project.id %}selected="selected"{% endif %}>{{ project.name }}</option>
-                        {% endfor %}
-                    </select>
+    <div class="form-update">
+        <form action="/tickets/update_ticket/{{ ticket.id }}/" method="POST">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-md-3 hidden">
+                    <div class="form-group">
+                        <label for="project">Project</label>
+                        <select id="project"  name="project" class="form-control">
+                            {% for project in project_list %}
+                                <option value="{{ project.id }}" {% if ticket.project.id == project.id %}selected="selected"{% endif %}>{{ project.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="priority">Priority</label>
+                        <select id="priority"  name="priority" class="form-control">
+                            {% for priority in priority_list %}
+                                <option value="{{ priority.id }}" {% if ticket.priority.id == priority.id %}selected="selected"{% endif %} style="color: {{ priority.display_color }};">{{ priority.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="priority">Priority</label>
-                    <select id="priority"  name="priority" class="form-control">
-                        {% for priority in priority_list %}
-                            <option value="{{ priority.id }}" {% if ticket.priority.id == priority.id %}selected="selected"{% endif %} style="color: {{ priority.display_color }};">{{ priority.name }}</option>
-                        {% endfor %}
-                    </select>
+                <div class="col-md-3 hidden">
+                    <div class="form-group">
+                        <label for="status">Status</label>
+                        <select id="status"  name="status" class="form-control">
+                            {% for status in status_list %}
+                                <option value="{{ status.id }}" {% if ticket.status.id == status.id %}selected="selected"{% endif %}>{{ status.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="assigned">Assigned to</label>
+                        <select id="assigned"  name="assigned" selected="selected" class="form-control">
+                            <option value="unassigned" {% if ticket.assigned_to == None %}selected="selected"{% endif %}>Unassigned</option>
+                            {% for member in tab_users %}
+                                <option value="{{ member.id }}" {% if ticket.assigned_to.id == member.id %}selected="selected"{% endif %}>{{ member.username }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="form-group">
-                    <label for="status">Status</label>
-                    <select id="status"  name="status" class="form-control">
-                        {% for status in status_list %}
-                            <option value="{{ status.id }}" {% if ticket.status.id == status.id %}selected="selected"{% endif %}>{{ status.name }}</option>
-                        {% endfor %}
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="assigned">Assigned to</label>
-                    <select id="assigned"  name="assigned" selected="selected" class="form-control">
-                        <option value="unassigned" {% if ticket.assigned_to == None %}selected="selected"{% endif %}>Unassigned</option>
-                        {% for member in tab_users %}
-                            <option value="{{ member.id }}" {% if ticket.assigned_to.id == member.id %}selected="selected"{% endif %}>{{ member.username }}</option>
-                        {% endfor %}
-                    </select>
-                </div>
+
+            <div class="form-group-update">
+                <label for="name">Name</label>
+                <input type="text" style="font-size:0.75em;" name="name" id="name" class="form-control" value="{{ ticket.name }}"/><br>
+                <label for="desc">Description</label> <br><br>
+                <textarea name="desc" id="desc" style="width:100%;font-size:0.8em;">{{ ticket.desc }}</textarea>
+                <br />
+                <input style="font-size:0.8em;" type="submit" class="btn btn-primary btn-lg" value="Update" />
             </div>
-            <div class="col-md-6" style="text-align: right;">
-                <br/>
-                [ <a href="/tickets/">View All Tickets</a> ]<br/>
-                [ <a href="/tickets/?user={{ user.id }}">View My Tickets</a> ]<br/>
-                <br/>
-                [ <a href="/tickets/view/{{ ticket.id }}/">View Ticket</a> ]
-            </div>
-        </div>
-
-        <hr />
-
-        <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" name="name" id="name" class="form-control" value="{{ ticket.name }}"/>
-        </div>
-
-        <textarea name="desc" id="desc">{{ ticket.desc }}</textarea>
-        <br />
-        <input type="submit" class="btn btn-primary btn-lg" value="Update" />
-    </form>
+        </form>
+    </div>    
 {% endblock %}

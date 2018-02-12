@@ -1,0 +1,80 @@
+*{
+    margin:0;
+    padding:0;
+}
+.table-viewall{
+    padding:5em;
+    text-align:center;
+    color:white;
+}
+.table-viewall > thead > tr > td{
+    font-size:1.5em;
+    padding-left:2em;
+}
+.table-viewall > tbody > tr > td{
+    font-size:1.25em;
+    padding-left:2em;
+}
+.table-viewall > tbody,thead > tr > .ticket-name-viewall{
+    width:70%;
+    text-align:center;
+}
+.simple-view{
+    font-size:20px;
+    color:white;
+    padding:1em;
+}
+.hidden{
+    display:none;
+}
+.row-view{
+    padding-top:1em;
+    padding-left:2em;
+}
+.description-view{
+    margin:1em;
+}
+#description-content-view{
+    margin:1em;
+}
+.ticket-view{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+    padding-right:3em;
+    margin-top:1em;
+}
+.ticket-view > div{
+    padding:0.5em;
+    background-color: black;
+    opacity:0.9;
+}
+.contents-view{
+    padding:1em;
+}
+.ticket-comments-view{
+    display:flex;
+    flex-direction:column;
+    margin:5em;
+    justify-content:space-between;
+}
+.ticket-comment-main{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#create-ticket-div-update{
+    padding-top:5em;
+}
+.form-update{
+    padding:5em;
+    font-size:2em;
+    color:white;
+}
+.form-group-update{
+    padding:2em;
+}
+.form-group-update > input {
+    margin:2em;
+    padding:0.5em;
+}
