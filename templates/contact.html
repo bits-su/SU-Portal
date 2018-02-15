@@ -1,22 +1,47 @@
 {% extends 'base.html'%}
 
-{% block title %}
-    <title>Contact Details - SU Portal</title>
-{% endblock %}
+	{% block title %}
+	    <title>Contact Details - SU Portal</title>
+	{% endblock %}
+	{% block head %}
+	<style>
+		div.gallery {
+		    margin: 5px;
+		    border: 1px solid #ccc;
+		    float: left;
+		    width: 180px;
+		}
+
+		div.gallery:hover {
+		    border: 1px solid #777;
+		}
+
+		div.gallery img {
+		    width: 100%;
+		    height: auto;
+		}
+
+		div.desc {
+		    padding: 15px;
+		    text-align: center;
+		}
+	</style>
+	{% end block %}
 
 {% block content %}
 <h1>ABOUT US</h1>
 	{% if members %}
-	<ul>
+	
 		{% for member in members%}
-		<li>
-			<h3>{{member.first_name}} {{member.last_name}}</h3>
-			<p>{{member.phone}}</p>
-			<img src="{{member.image}}">
-		</li>
+		<div class = "gallery">
+			<a target="_blank" href="{{member.image}}">
+				<img src="{{member.image}}" width="300" height="200">
+			</a>
+			<div class="desc">
+				 <p>{{member.first_name}} {{member.last_name}}<br>{{member.phone}}</p>
+			</div>
 		{% endfor %}
-	</ul>
-
+	
 	{% else %}
 		<strong>There are no contacts in the list</strong>
 	{% endif %}
