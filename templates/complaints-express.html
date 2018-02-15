@@ -1,11 +1,25 @@
 {% extends "base.html" %}
 
-{% block content %}
+{% block title %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static "app/stylesheets/complaints.css" %}">
+{% endblock %}
 
-<form action="/submit_complaint" method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input class="btn btn-danger" type="submit" value="Submit">
-</form>
+{% block content %}
+<div class="complaint-form-main">
+    <form class="complaint-form" action="/submit_complaint" method="POST" enctype="multipart/form-data">
+    <h3>Complaint Form</h3>
+        {% csrf_token %}
+        <div class="form-title">
+            <span>Title</span>
+            <p>{{ form.title }}</p>
+        </div>
+        <div class="form-content">
+            <span>Content</span
+            ><p>{{ form.complaint }}</p>
+        </div>    
+        <input class="btn btn-danger form-button" type="submit" value="Submit">
+    </form>
+</div>    
 
 {% endblock %}
