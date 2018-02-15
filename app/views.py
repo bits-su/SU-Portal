@@ -78,3 +78,5 @@ def submit_complaint(request):
 
 def calendar(request):
     return render(request, 'calendar.html')
+def clubs(request):
+    return render(request, 'clubs.html')

@@ -13,4 +13,5 @@ urlpatterns = [
     path('submit_complaint',views.submit_complaint, name='submit-complaint'),
     path('contact/', views.contact, name='contact'),
     path('calendar/', views.calendar, name='calendar'),
+    path('clubs/', views.clubs, name='clubs'),
 ]
