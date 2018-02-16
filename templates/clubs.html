@@ -77,6 +77,25 @@ html {
         <p>example@example.com</p>
         <p><button class="button">members</button></p>
       </div>
+<link rel="stylesheet" href="{% static "app/stylesheets/clubs.css" %}">
+<script src="{% static "app/modals.js" %}" charset="utf-8"></script>   
+{% endblock %}
+
+
+{% block content %}
+   
+<div class="club-table">
+
+<!-- Modal Structure -->
+    <div id="modal1" class="modal z-depth-4 #e3f2fd blue lighten-5">
+        <div class="modal-content">
+            <h3 class="align-left #2196f3 blue-text">English Language Activities Society</h3>
+            <p class="align-left">This wonderful, wacky club that calls itself ELAS is made of people who live and love all things literary. Unfettered by an acute sense of self-awareness, ELAS is a not just a club, It’s a family. Apart from holding regular debate practices, workshops, and weekly events, its members also enjoy the art of bad puns, sarcastic jokes, and meme sharing on Facebook.                                                          Disclaimer: We do not endorse Grammar Nazis.
+            </p>
+        </div>
+        <div class="modal-footer" id="modal1-close">
+            <a href="#" id="modal1-close" class="btn modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+        </div>
     </div>
   </div>
 
