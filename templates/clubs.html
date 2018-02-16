@@ -66,19 +66,136 @@ html {
 <h2>Clubs and Departments</h2>
 <br>
 {% load static %}
-<div class="row">
-  <div class="column">
-    <div class="card">
-      <img src="{% static "app/logo.png" %}" alt="Jane" style="width:100%">
-      <div class="container">
-        <h2>Club 1</h2>
-        <p class="title">sec/prez/head</p>
-        <p>Some text that describes me</p>
-        <p>example@example.com</p>
-        <p><button class="button">members</button></p>
-      </div>
 <link rel="stylesheet" href="{% static "app/stylesheets/clubs.css" %}">
-<script src="{% static "app/modals.js" %}" charset="utf-8"></script>   
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#modal1-btn').on('click',function(event){
+                event.preventDefault();
+                $('#modal1').show(); 
+            });
+            $('#modal1-close').on('click', function(event){
+                event.preventDefault();
+                $('#modal1').hide();
+            });
+
+            $('#modal2-btn').on('click',function(event){
+                event.preventDefault();
+                $('#modal2').show(); 
+            });
+            $('#modal2-close').on('click', function(event){
+                event.preventDefault();
+                $('#modal2').hide();
+            });
+
+            $('#modal3-btn').on('click',function(event){
+                event.preventDefault();
+                $('#modal3').show(); 
+            });
+            $('#modal3-close').on('click', function(event){
+                event.preventDefault();
+                $('#modal3').hide();
+            });
+
+            $('#modal4-btn').on('click',function(event){
+                event.preventDefault();
+                $('#modal4').show(); 
+            });
+            $('#modal4-close').on('click', function(event){
+                event.preventDefault();
+                $('#modal4').hide();
+            });
+
+            $('#modal5-btn').on('click',function(event){
+                event.preventDefault();
+                $('#modal5').show(); 
+            });
+            $('#modal5-close').on('click', function(event){
+                event.preventDefault();
+                $('#modal5').hide();
+            });    
+
+            $('#modal6-btn').on('click',function(event){
+                event.preventDefault();
+                $('#modal6').show(); 
+            });
+            $('#modal6-close').on('click', function(event){
+                event.preventDefault();
+                $('#modal6').hide();
+            });
+
+            $('#modal7-btn').on('click',function(event){
+                event.preventDefault();
+                $('#modal7').show(); 
+            });
+            $('#modal7-close').on('click', function(event){
+                event.preventDefault();
+                $('#modal7').hide();
+            });
+
+            $('#modal8-btn').on('click',function(event){
+                event.preventDefault();
+                $('#modal8').show(); 
+            });
+            $('#modal8-close').on('click', function(event){
+                event.preventDefault();
+                $('#modal8').hide();
+            });
+
+            $('#modal9-btn').on('click',function(event){
+                event.preventDefault();
+                $('#modal9').show(); 
+            });
+            $('#modal9-close').on('click', function(event){
+                event.preventDefault();
+                $('#modal9').hide();
+            });
+
+            $('#modal10-btn').on('click',function(event){
+                event.preventDefault();
+                $('#modal10').show(); 
+            });
+            $('#modal10-close').on('click', function(event){
+                event.preventDefault();
+                $('#modal10').hide();
+            });
+
+            $('#modal11-btn').on('click',function(event){
+                event.preventDefault();
+                $('#modal11').show(); 
+            });
+            $('#modal11-close').on('click', function(event){
+                event.preventDefault();
+                $('#modal11').hide();
+            });
+
+            $('#modal12-btn').on('click',function(event){
+                event.preventDefault();
+                $('#modal12').show(); 
+            });
+            $('#modal12-close').on('click', function(event){
+                event.preventDefault();
+                $('#modal12').hide();
+            });
+
+            $('#modal13-btn').on('click',function(event){
+                event.preventDefault();
+                $('#modal13').show(); 
+            });
+            $('#modal13-close').on('click', function(event){
+                event.preventDefault();
+                $('#modal13').hide();
+            });
+
+            $('#modal14-btn').on('click',function(event){
+                event.preventDefault();
+                $('#modal14').show(); 
+            });
+            $('#modal14-close').on('click', function(event){
+                event.preventDefault();
+                $('#modal14').hide();
+            });
+        });
+    </script>
 {% endblock %}
 
 
@@ -98,6 +215,39 @@ html {
         </div>
     </div>
   </div>
+
+    <div id="modal2" class="modal z-depth-4 #e3f2fd blue lighten-5">
+        <div class="modal-content">
+            <h3 class="align-left #2196f3 blue-text">Journal Club</h3>
+            <p class="align-left">Welcome to the official newsmaking factory of BPHC. Here, Jay-C makes words dance to the beats of information, producing newsletters, magazines that are filtered by our journalistic auto-tuners. Investigating the different genres of the world and doing the occasional duet with Wikipedia, this student factory is the place to be.
+            </p>
+        </div>
+        <div class="modal-footer" id="modal1-close">
+            <a href="#" id="modal2-close" class="btn modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+        </div>
+    </div>
+
+    <div id="modal3" class="modal z-depth-4 #e3f2fd blue lighten-5">
+        <div class="modal-content">
+            <h3 class="align-left #2196f3 blue-text">Shades Club</h3>
+            <p class="align-left">The fine arts club of BITS Hyderabad, Shades is a gathering and celebration of creative people. A perfect platform to showcase your artistic capabilities and learn a lot more. The club organizes workshops on various art and craft forms. Some of our standout performances include the repainting of the Shades wall and the stage shows, live artworks during fest inaugurations. We also organize an annual exhibition during Pearl, BPHC cultural fest where artworks and various handcrafts of our artists are displayed.
+                </p>
+        </div>
+        <div class="modal-footer" id="modal1-close">
+            <a href="#" id="modal3-close" class="btn modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+        </div>
+    </div>
+
+    <div id="modal4" class="modal z-depth-4 #e3f2fd blue lighten-5">
+        <div class="modal-content">
+            <h3 class="align-left #2196f3 blue-text">VFx Club</h3>
+            <p class="align-left">The club which leaves you enthralled, fascinated and spellbound by creating high-end graphics, 3D models, special effects and visual effects or VFx. Trains and nurtures students' skill to showcase their video and design making skill.
+                </p>
+        </div>
+        <div class="modal-footer" id="modal1-close">
+            <a href="#" id="modal4-close" class="btn modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+        </div>
+    </div>
 
     <div id="modal5" class="modal z-depth-4 #e3f2fd blue lighten-5">
             <div class="modal-content">
@@ -216,7 +366,11 @@ html {
 <table class="centered main-table">
     <tbody>
         <tr>
+<<<<<<< HEAD
             <td id="modal1-btn"  data-target="modal1" class= "modal-trigger #e3f2fd blue lighten-5">ELAS</td>
+=======
+            <td id="modal1-btn" data-target="modal1" class= "modal-trigger #e3f2fd blue lighten-5">ELAS</td>
+>>>>>>> e595841... Add info about clubs
             <td id="modal2-btn" data-target="modal1" class= "modal-trigger #bbdefb blue lighten-4">JC</td>
             <td id="modal3-btn" data-target="modal1" class= "modal-trigger #90caf9 blue lighten-3">Shades</td>
             <td id="modal4-btn" data-target="modal1" class= "modal-trigger #64b5f6 blue lighten-2">VFx</td>
