@@ -13,6 +13,8 @@ from django.urls import reverse
 
 from .models import User
 
+from .models import User
+
 from .forms import ComplaintForm
 
 
@@ -31,8 +33,6 @@ def home(request):
 def home(request):
     return render(request,'home.html')
 
-def aboutus(request):
-    return render(request,'aboutus.html')    
 def show_user_info(request, user_id):
     # Sample view. Renders template to display user details.
     # Create new user from admin portal /admin/
