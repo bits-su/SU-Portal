@@ -426,7 +426,7 @@ Main components
     left: 0;
     height: 100vh;
     width: 100vw;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.8);
     z-index: -1;
 }
 #login {
@@ -438,7 +438,7 @@ Main components
     font-size: 18px;
     font-size: 1.125rem;
     color: #ffffff;
-    z-index: 1;
+    z-index: 2;
 }
 
 #ticket-button {
@@ -501,26 +501,105 @@ Main components
 th {
     border: 1px solid black;
 }
+#login-con {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    align-items: left;
+    color: white;
+}
+#runningoutofnames {
+    height: 80vh;
+    margin-left: 75px;
+}
+#login-con h1 {
+    padding: 15px 0;
+}
+#login-con p {
+    display: flex;
+    flex-direction: column;
+}
+#login-con h3 {
+    background-color: #039be5;
+    color: white;
+    border-radius: 3px;
+    height: 40px;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px;
+    display: inline-flex;
+}
+#phew {
+    display: flex;
+    flex-direction: row;
+}
+#phew a {
+    margin-top: 30px;
+    margin-left: 2px;
+    color: #b6b6b6;
+
+}
+label {
+    padding-bottom: 5px;
+}
+input {
+    outline: 0;
+    background: #f2f2f2;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+    border-radius: 4px;
+    color: black;
+}
+#hi {
+    padding: 15px 0;
+}
+@keyframes breathe {
+    0% {
+        background-size: 100%;
+    }
+    50% {
+        background-size: 200%;
+    }
+    100% {
+        background-size: 100%;
+    }
+}
+#zoom-it {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -2;
+    background: url("../bphc.jpeg");
+    background-size: 100%;
+    background-position: center;
+    animation: 200s breathe linear infinite;
+}
 /* a {
     color: black;
 } */
 
-body { 
+/* body {
   font-family: 'Open Sans', 'sans-serif';
   color: #cecece;
   background: #222;
   overflow: hidden;
 }
 
-.item-1, 
-.item-2, 
+.item-1,
+.item-2,
 .item-3 {
     position: absolute;
   display: block;
     top: 2em;
-  
+
   width: 60%;
-  
+
   font-size: 2em;
 
     animation-duration: 20s;
@@ -556,4 +635,4 @@ body {
     0%, 66.66% { left: -100%; opacity: 0; }
   74.96%, 91.62% { left: 25%; opacity: 1; }
   100% { left: 110%; opacity: 0; }
-}
+} */

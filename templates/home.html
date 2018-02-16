@@ -1,19 +1,17 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    <title>Home - SU Portal</title>
+<title>Home - SU Portal</title>
 {% endblock %}
-{<head>
-	{% load static %}
-        <link rel="stylesheet" href="{% static "app/stylesheets/home.css" %}">
-</head>
 {% block content %}
-    <h1>BITS Pilani, Hyderabad Campus</h1>
-    <h2>Student Union Portal</h2>
+<h1>BITS Pilani, Hyderabad Campus</h1>
+<h2>Student Union Portal</h2>
 
- <p class="item-1">CG == LOL<br><img src="{% static "app/bphc.jpeg" %}" height="200" width="400"></p>
+{% comment %}
+<p class="item-1">CG == LOL</p>
 
 <p class="item-2">Fuck cdcs<br><img src="{% static "app/bphc.jpeg" %}" height="200" width="400"></p>
 
-<p class="item-3">Zindagi jhandba<br><img src="{% static "app/bphc.jpeg" %}" height="200" width="400"></p>
+<p class="item-3">Zindagi jhandba</p>
+{% endcomment %}
 {% endblock %}

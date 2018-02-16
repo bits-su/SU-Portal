@@ -1,15 +1,31 @@
-{% extends 'admin/base.html' %}
-
 {% block title %}
-    <title>Login - SU Portal </title>
+<title>Login - SU Portal </title>
+{% load static %}
+<link rel="stylesheet" href="{% static "app/stylesheets/home.css" %}">
 {% endblock %}
 
 {% block content %}
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Login</button>
-  </form>
-  <br/>
-  <a href="{% url 'social:begin' 'google-oauth2' %}">Login with Google</a><br>
+<div id="login-con">
+
+    <div id="zoom-it">
+
+    </div>
+    <div id="blur-it-all">
+
+    </div>
+    <div id="runningoutofnames">
+        <div id="phew">
+            <h1>SU Portal</h1>
+            <a href="/"> / Home</a>
+        </div>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Login">
+            <p id="hi">- or -</p>
+            <a href="{% url 'social:begin' 'google-oauth2' %}"><h3>Login with Google</h3></a>
+        </form>
+    </div>
+
+</div>
 {% endblock %}
