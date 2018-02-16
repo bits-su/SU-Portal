@@ -9,28 +9,21 @@ from django.http import HttpResponse
 from django.core.mail import send_mail
 from django import forms
 from django.urls import reverse
-
-
-from .models import User
-
-from .models import User
+from django.contrib import messages
 
 from .forms import ComplaintForm
 
 
-@login_required
 def home(request):
-    user_email = request.user.email
-    if(not user_email.endswith('hyderabad.bits-pilani.ac.in')):
-        logout(request)
-        User.objects.filter(email=user_email).delete()
-        return home(request)
-    else:
-        return render(request,'home.html')
-    # return render(request,'home.html')
-
-
-def home(request):
+    if(request.user.is_authenticated):
+        user_email = request.user.email
+        if(not user_email.endswith('hyderabad.bits-pilani.ac.in')):
+            logout(request)
+            User.objects.filter(email=user_email).delete()
+            messages.warning(request, 'Login Failed. Invalid email.')
+            return HttpResponseRedirect(reverse('login'))
+        else:
+            pass
     return render(request,'home.html')
 
 def show_user_info(request, user_id):

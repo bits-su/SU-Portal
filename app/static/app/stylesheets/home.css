@@ -580,6 +580,10 @@ input {
     background-position: center;
     animation: 200s breathe linear infinite;
 }
+
+#login-failed-message {
+    color:red;
+}
 /* a {
     color: black;
 } */
