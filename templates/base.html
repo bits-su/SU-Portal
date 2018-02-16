@@ -28,9 +28,12 @@
 
         <div class="cd-shadow-layer"></div>
         <div id="login">
-            <a href="/login">Login</a>
-            <a href="/logout">Logout</a>
-             <p> Welcome {{request.user.username}}</p>
+            {% if request.user.username %}
+                <a href="/logout">Logout</a>
+                <p> Welcome {{request.user.username}}</p>
+            {% else %}
+                <a href="/login">Login</a>
+            {% endif %}
         <div>
         </div>
         <div id="main-nav">
