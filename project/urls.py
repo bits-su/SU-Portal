@@ -22,6 +22,5 @@ urlpatterns = [
     path('tickets/', include('simpleticket.urls'), name='tickets'),
     path('admin/', admin.site.urls),
     path('login/', auth_views.login, name='login'),
-    path('logout/', auth_views.logout, name='logout'),
     path('auth/', include('social_django.urls', namespace='social')),
 ]

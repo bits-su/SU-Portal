@@ -29,7 +29,7 @@
         <div id="login">
             {% if request.user.username %}
                 <a href="/logout">Logout</a>
-                <p> Welcome {{request.user.username}}</p>
+                <p> Welcome {{request.user.first_name}}</p>
             {% else %}
                 <a href="/login">Login</a>
             {% endif %}
