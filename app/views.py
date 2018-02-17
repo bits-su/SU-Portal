@@ -72,8 +72,20 @@ def submit_complaint(request):
 def calendar(request):
     return render(request, 'calendar.html')
 
+def aboutus(request):
+    return render(request, 'aboutus.html')
+
 def clubs(request):
     return render(request, 'clubs.html')
+
+def depts(request):
+    return render(request, 'depts.html')
+
+def techassoc(request):
+    return render(request, 'techassoc.html')
+
+def ngos(request):
+    return render(request, 'ngos.html')    
 
 def logout_view(request):
     logout(request)
