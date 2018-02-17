@@ -584,11 +584,11 @@ input {
 #login-failed-message {
     color:red;
 }
-/* a {
+ a {
     color: black;
 } */
 
-/* body {
+ body {
   font-family: 'Open Sans', 'sans-serif';
   color: #cecece;
   background: #222;
@@ -639,4 +639,13 @@ input {
     0%, 66.66% { left: -100%; opacity: 0; }
   74.96%, 91.62% { left: 25%; opacity: 1; }
   100% { left: 110%; opacity: 0; }
-} */
+<<<<<<< HEAD
+} 
+}
+#bus-menu{
+    display:flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    justify-content: space-around;
+    align-items:center;
+}

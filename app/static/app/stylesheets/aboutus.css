@@ -1,0 +1,61 @@
+*{
+    margin:0;
+    padding:0;
+}
+.grid{
+    display:flex;
+    flex-direction: column;
+    padding:3em;
+}
+.sections{
+    padding:4em;
+    border-radius:5px;
+}
+.section-top{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap:wrap;
+}
+.section-second{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap:wrap;
+}
+.section-third{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap:wrap;
+}
+a > div{
+    border-radius:5px;
+    color:black;
+    padding:4em;
+    margin:2em;
+}
+p{
+    color:black;
+}
+.title{
+    font-size:4em;
+}
+.modal{
+    padding:2em;
+    margin-top:3em;
+}
+.modal-content{
+    padding:2em;
+}
+.modal-content > p{
+    padding:2em;
+    font-size:1.5em;
+    color:black;
+}
+.btn{
+    font-size:1.5em;
+}
+.btn:hover{
+    color:white;
+}
