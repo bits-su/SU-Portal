@@ -7,6 +7,7 @@ from django.core.validators import RegexValidator
 class User(AbstractUser):
     image = models.ImageField(blank=True)
     phone = models.CharField(
+        blank=True,
         max_length = 10,
         validators=[
             RegexValidator(
