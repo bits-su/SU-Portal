@@ -1,5 +1,4 @@
 {% extends "base.html" %}
-
 {% block head %}
     <style type="text/css">
         #create-ticket-div {
@@ -32,16 +31,21 @@
         <div class="col-md-6 ticket-view">
             <button id="view-all-button" class="btn ticket-button">All Tickets</button>
             <button id="create-ticket-button" class="btn btn-success ticket-button">Create New Ticket</button>
-            <div style="font-size:20px;"><a href="/tickets/">View All Tickets</a></div>
-            <div style="font-size:20px;"><a href="/tickets/?user={{ user.id }}">View My Tickets</a></div>
-            <div style="font-size:20px;"><a href="/tickets/view/{{ ticket.id }}/">View Ticket</a></div> 
+            <button id="view-my-tickets" class="btn">View My Tickets</button>
+            <button id="view-ticket" class="btn">View Ticket</button> 
         </div>
         <script type="text/javascript">
             $("#view-all-button").click(function() {
                 window.location.href = "/tickets/";
             });
-            $("#project-view-button").click(function() {
-                window.location.href = "/tickets/project/";
+            $("#create-ticket-button").click(function() {
+                window.location.href = "/tickets/new/";
+            });
+            $("#view-my-tickets").click(function() {
+                window.location.href = "/tickets/?user={{ user.id }}";
+            });
+            $("#view-ticket").click(function() {
+                window.location.href = "/tickets/view/{{ ticket.id }}/";
             });
         </script>
     </div>

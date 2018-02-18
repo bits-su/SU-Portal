@@ -58,11 +58,6 @@
     padding-right:3em;
     margin-top:1em;
 }
-.ticket-view > div{
-    padding:0.5em;
-    background-color: black;
-    opacity:0.9;
-}
 .contents-view{
     padding:1em;
     background-color: white;
@@ -90,14 +85,12 @@
     border-bottom: 1px solid gray;
 }
 #create-ticket-div-update{
-    padding-top:5em;
-
+    padding-top:7.5em;
 }
 .form-update{
     padding:5em;
     font-size:2em;
     color:black;
-    opacity:0.9;
 }
 .form-group-update{
     padding:2em;
@@ -105,5 +98,4 @@
 }
 .form-group-update > input {
     margin:2em;
-    padding:0.5em;
 }

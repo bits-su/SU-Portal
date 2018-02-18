@@ -440,43 +440,6 @@ Main components
     color: #ffffff;
     z-index: 2;
 }
-
-#ticket-button {
-    outline: 0;
-    background-color: white;
-    border: 0;
-    padding: 10px 15px;
-    color: #53e3a6;
-    border-radius: 3px;
-    width: 250px;
-    cursor: pointer;
-    font-size: 18px;
-}
-
-#view-all-button{
-    outline: 0;
-    border: 0;
-    background-color: black;
-    padding: 10px 15px;
-    color: #53e3a6;
-    border-radius: 3px;
-    width: 250px;
-    cursor: pointer;
-    font-size: 18px;
-}
-
-#create-ticket-button{
-    outline: 0;
-    border: 0;
-    background-color: black;
-    padding: 10px 15px;
-    color: #53e3a6;
-    border-radius: 3px;
-    width: 250px;
-    cursor: pointer;
-    font-size: 18px;
-}
-
 .complaints-block {
     border-radius:20px;
     width: 1700px;

@@ -28,8 +28,8 @@
 {% block content %}
     <div id="create-ticket-div-update">
         <div class="col-md-6 ticket-view">
-            <button id="view-all-button" class="btn ticket-button">All Complaints</button>        
-            <div style="font-size:20px;"><a href="/tickets/?user={{ user.id }}">View My Complaints</a></div>
+            <div class="waves-effect waves-light btn-large" id="view-all-button">All Complaints</div>        
+            <div class="waves-effect waves-light btn-large"><a style="color:white;" href="/tickets/?user={{ user.id }}">View My Complaints</a></div>
         </div>
         <script type="text/javascript">
             $("#view-all-button").click(function() {
@@ -81,10 +81,10 @@
         </div>
 
         <div class="form-group-update">
-            <label for="name">Complaint-topic</label>
-            <input style="font-size:0.8em;" type="text" name="name" id="name" value="{{ name }}" class="form-control"/><br>
-            <label for="desc">Description</label><br><br>
-            <textarea style="width:100%;font-size:0.8em;" name="desc" id="desc" class="form-control"></textarea>
-            <input style="font-size:0.8em;" type="submit" class="btn btn-primary btn-lg" value="Submit Ticket" />
+            <label for="name"><h4>Complaint-topic</h4></label>
+            <input style="font-size:0.8em;" type="text" name="name" id="name" value="{{ name }}" class="form-control"/>
+            <label for="desc"><h4>Description</h4></label>
+            <textarea name="desc" id="desc" class="form-control"></textarea>
+            <input type="submit" class="btn btn-primary btn-lg" value="Submit" /> 
     </form>
 {% endblock %}

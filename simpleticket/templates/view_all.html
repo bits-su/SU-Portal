@@ -35,8 +35,8 @@
     <br><br>
     <div id="create-ticket-div">
         <!-- <button id="project-view-button" class="btn ticket-button">Project View</button> -->
-        <button id="view-all-button" class="btn ticket-button" {% if filter == 'All' %}disabled="disabled"{% endif %}>View all complaints</button>
-        <button id="create-ticket-button" class="btn btn-success ticket-button"><a href="/tickets/new/">Add a complaint</a></button>
+        <div id="view-all-button" class="btn ticket-button" {% if filter == 'All' %}disabled="disabled"{% endif %}>View all complaints</div>
+        <div id="create-ticket-button" class="btn btn-success ticket-button"><a style="color:white;" href="/tickets/new/">Add a complaint</a></div>
         <script type="text/javascript">
             $("#view-all-button").click(function() {
                 window.location.href = "/tickets/";
