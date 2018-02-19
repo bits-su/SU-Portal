@@ -3,6 +3,7 @@ from django.contrib.auth import get_user_model
 from django.db.models import Sum
 from django.conf import settings
 
+
 User = get_user_model()
 
 class Project(models.Model):
@@ -31,7 +32,7 @@ class Project(models.Model):
 
 class Priority(models.Model):
     name = models.CharField(max_length=32)
-    value = models.IntegerField()
+    value = models.IntegerField(default=1)
     is_default = models.BooleanField(default=False)
     display_color = models.TextField(max_length=16, default="#000000")
 
@@ -45,7 +46,7 @@ class Priority(models.Model):
 class Status(models.Model):
     name = models.CharField(max_length=32)
     is_default = models.BooleanField(default=False)
-    hide_by_default = models.BooleanField(default=False)
+    hide_by_default = models.BooleanField(default =True)
 
     def __unicode__(self):
         return self.name
