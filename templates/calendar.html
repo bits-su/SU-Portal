@@ -1,11 +1,79 @@
 
-{% extends 'base.html'%}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial;}
 
-{% block title %}
-    <title>Calendar - SU Portal</title>
-{% endblock %}
 
-{% block content %}
-	<h1>Student Union Calendar</h1>
-	<iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=suc%40hyderabad.bits-pilani.ac.in&amp;color=%231B887A&amp;ctz=Asia%2FCalcutta" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-{% endblock %}	
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+.tab button:hover {
+    background-color: #ddd;
+}
+
+.tab button.active {
+    background-color: #ccc;
+}
+
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+</style>
+</head>
+<body>
+
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'calendar')">calendar</button>
+  <button class="tablinks" onclick="openCity(event, 'Events')">Events</button>
+</div>
+
+<div id="calendar" class="tabcontent">
+  <h3>calendar</h3>
+  <p><iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=suc%40hyderabad.bits-pilani.ac.in&amp;color=%231B887A&amp;ctz=Asia%2FCalcutta" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe></p>
+</div>
+
+<div id="Events" class="tabcontent">
+  <h3>Events</h3>
+  <p><iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTWCg-L9WB-wAnxKNSgyuzNZSJHlI97fYnxWBExy4ouMtYUtMOBWSfUyQY6EJdoH6DgJ302hUJvFurb/pubhtml?widget=true&amp;headers=false"></iframe></p> 
+</div>
+
+
+
+<script>
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+</script>
+     
+</body>
+</html> 
