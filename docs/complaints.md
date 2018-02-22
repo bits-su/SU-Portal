@@ -16,3 +16,11 @@ A complaint includes the following fields :
 2. Project: 'default'
 3. Priority: 'default'
 4. Assigned to: Default 'pseudo' user
+
+### Permissions cheatsheet
+* 'self' refers to the user who created the ticket
+* admin = superuser
+* staff = SU guys, postholders
+* Permission to update ticket : self, admin
+* Permission to delete ticket : self, admin, staff
+* Permission to delete comment : <awaited>

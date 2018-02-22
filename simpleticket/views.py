@@ -256,10 +256,10 @@ def submit_comment(request, ticket_id):
     comment.save()
 
     # Email the assigned user if different than commenting user
-    if ticket.assigned_to is not None and (ticket.assigned_to != comment.commenter):
-        message_preamble = 'A ticket you are assigned to has received a comment:\n' + \
-                           request.get_host() + '/tickets/view/' + str(ticket.id) + '/\n\n'
-        email_user(ticket.assigned_to, "Ticket Comment: " + ticket.name, message_preamble + ticket.desc)
+    # if ticket.assigned_to is not None and (ticket.assigned_to != comment.commenter):
+    #     message_preamble = 'A ticket you are assigned to has received a comment:\n' + \
+    #                        request.get_host() + '/tickets/view/' + str(ticket.id) + '/\n\n'
+    #     email_user(ticket.assigned_to, "Ticket Comment: " + ticket.name, message_preamble + ticket.desc)
 
     messages.success(request, "The comment has been added.")
 
@@ -269,18 +269,30 @@ def submit_comment(request, ticket_id):
 def update(request, ticket_id):
     ticket = get_object_or_404(Ticket, pk=ticket_id)
 
+    active_user = request.user
+    if(not ticket.created_by == active_user):
+        raise Http404("You are not authorized to update this ticket")
+    else:
+        pass
+
     priority_list = Priority.objects.all()
     status_list = Status.objects.all()
     project_list = Project.objects.all()
     users_list = User.objects.all()
 
     return render(request, 'update.html', {'ticket': ticket, 'tab_users': users_list,
-                                                        'priority_list': priority_list, 'status_list': status_list,
+                                                    'priority_list': priority_list, 'status_list': status_list,
                                                         'project_list': project_list})
 
 @login_required
 def update_ticket(request, ticket_id):
     ticket = get_object_or_404(Ticket, pk=ticket_id)
+
+    active_user = request.user
+    if(not ticket.created_by == active_user):
+        raise Http404("You are not authorized to update this ticket")
+    else:
+        pass
 
     project = Project.objects.get(pk=int(request.POST['project']))
     priority = Priority.objects.get(pk=int(request.POST['priority']))
@@ -333,10 +345,10 @@ def update_ticket(request, ticket_id):
         auto.save()
 
     # Email the assigned user if updated
-    if ticket.assigned_to is not None and (ticket.assigned_to != auto.commenter):
-        message_preamble = 'A ticket you are assigned to you has been updated:\n' +\
-                           request.get_host() + '/tickets/view/' + str(ticket.id) + '/\n\n'
-        email_user(ticket.assigned_to, "Ticket Update: " + ticket.name, message_preamble + ticket.desc)
+    # if ticket.assigned_to is not None and (ticket.assigned_to != auto.commenter):
+    #     message_preamble = 'A ticket you are assigned to you has been updated:\n' +\
+    #                        request.get_host() + '/tickets/view/' + str(ticket.id) + '/\n\n'
+    #     email_user(ticket.assigned_to, "Ticket Update: " + ticket.name, message_preamble + ticket.desc)
 
     messages.success(request, "The ticket has been updated.")
 
@@ -346,6 +358,13 @@ def update_ticket(request, ticket_id):
 def delete_ticket(request, ticket_id):
     # Get the ticket
     ticket = get_object_or_404(Ticket, pk=ticket_id)
+
+    active_user = request.user
+    if(not (active_user.is_staff or active_user.is_superuser)) \
+    and (not ticket.created_by == active_user):
+        raise Http404("You are not authorized to delete this ticket")
+    else:
+        pass
 
     # Delete all the ticket comments
     TicketComment.objects.filter(ticket=ticket).delete()
