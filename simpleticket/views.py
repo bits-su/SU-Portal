@@ -1,6 +1,6 @@
 from datetime import datetime
 from django.shortcuts import render
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, Http404
 from django.contrib.auth.models import User
 from .models import Priority, Status, Project, Ticket, TicketComment
 from django.shortcuts import get_object_or_404
@@ -30,7 +30,10 @@ def create(request):
 
 
 def view(request, ticket_id=1):
+    status = Status.objects.filter(name="open")
     ticket = get_object_or_404(Ticket, pk=ticket_id)
+    if ticket.status.name == "closed":
+        raise(Http404("No such open ticket found."))
     status_list = Status.objects.all()
 
     # Paginate Ticket_Comments
@@ -68,23 +71,26 @@ def view_all(request):
 
     # Do filtering for GET parameters
     args = {}
-    if assigned_filter and assigned_filter != 'unassigned':
-        args['assigned_to'] = assigned_filter
-    if assigned_filter and assigned_filter == 'unassigned':
-        args['assigned_to__exact'] = None
-    if created_filter:
-        args['created_by'] = created_filter
-    if priority_filter:
-        args['priority'] = priority_filter
-    if status_filter:
-        args['status'] = status_filter
-    if project_filter:
-        args['project'] = project_filter
-    tickets = Ticket.objects.filter(**args)
+    # if assigned_filter and assigned_filter != 'unassigned':
+    #     args['assigned_to'] = assigned_filter
+    # if assigned_filter and assigned_filter == 'unassigned':
+    #     args['assigned_to__exact'] = None
+    # if created_filter:
+    #     args['created_by'] = created_filter
+    # if priority_filter:
+    #     args['priority'] = priority_filter
+    # if status_filter:
+    #     args['status'] = status_filter
+    # if project_filter:
+    #     args['project'] = project_filter
+    # tickets = Ticket.objects.filter(**args)
+
+    status_open = Status.objects.get(name="open")
+    tickets = Ticket.objects.filter(status=status_open)
 
     # Filter out closed tickets
-    if not closed_filter or closed_filter.lower() != "true":
-        tickets = tickets.exclude(status__hide_by_default=True)
+    # if not closed_filter or closed_filter.lower() != "true":
+    #     tickets = tickets.exclude(status__hide_by_default=True)
 
     # Sort the tickets
     sort_filter = sort_setting
@@ -196,7 +202,10 @@ def submit_ticket(request):
     # Handle case of unassigned tickets
     assigned_option = request.POST['assigned']
     if assigned_option == 'unassigned':
-        ticket.assigned_to = None
+        # ticket.assigned_to = None
+        # Abstraction: Ticket gets alloted to pseudo user by default.
+        # Dirty workaround #1
+        ticket.assigned_to = User.objects.get(username="pseudo")
     else:
         ticket.assigned_to = User.objects.get(pk=int(assigned_option))
 
@@ -208,10 +217,10 @@ def submit_ticket(request):
     ticket.save()
 
     # Email the assigned user if different than creating user
-    if ticket.assigned_to is not None and (ticket.assigned_to != ticket.created_by):
-        message_preamble = 'You have been assigned a ticket:\n' + \
-                           request.get_host() + '/tickets/view/' + str(ticket.id) + '/\n\n'
-        email_user(ticket.assigned_to, "Ticket Assigned: " + ticket.name, message_preamble + ticket.desc)
+    # if ticket.assigned_to is not None and (ticket.assigned_to != ticket.created_by):
+    #     message_preamble = 'You have been assigned a ticket:\n' + \
+    #                        request.get_host() + '/tickets/view/' + str(ticket.id) + '/\n\n'
+    #     email_user(ticket.assigned_to, "Ticket Assigned: " + ticket.name, message_preamble + ticket.desc)
 
     messages.success(request, "The ticket has been created.")
 
