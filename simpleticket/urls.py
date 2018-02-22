@@ -12,5 +12,5 @@ urlpatterns = [
     path('submit_comment/<int:ticket_id>/', views.submit_comment),
     path('delete/(<int:ticket_id>\d+)/', views.delete_ticket),
     path('delete_comment/<int:comment_id>/', views.delete_comment),
-    path('project/', views.project),
+    # path('project/', views.project),
 ]
