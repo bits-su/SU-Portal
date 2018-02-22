@@ -7,6 +7,7 @@ from django.shortcuts import get_object_or_404
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
 from django.contrib import messages
 from django.contrib.auth import get_user_model
+from django.contrib.auth.decorators import login_required
 
 User = get_user_model()
 
@@ -17,7 +18,7 @@ except ImportError:
 
 from simpleticket.utils import email_user
 
-
+@login_required
 def create(request):
     priority_list = Priority.objects.all()
     status_list = Status.objects.all()
@@ -28,7 +29,7 @@ def create(request):
                                               'priority_list': priority_list, 'status_list': status_list,
                                               'project_list': project_list})
 
-
+@login_required
 def view(request, ticket_id=1):
     status = Status.objects.filter(name="open")
     ticket = get_object_or_404(Ticket, pk=ticket_id)
@@ -191,7 +192,7 @@ def view_all(request):
                                                           'sort': sort_setting, 'order': order_setting,
                                                           'show_closed': show_closed})
 
-
+@login_required
 def submit_ticket(request):
     ticket = Ticket()
     ticket.project = Project.objects.get(pk=int(request.POST.get('project',False)))
@@ -226,7 +227,7 @@ def submit_ticket(request):
 
     return HttpResponseRedirect("/tickets/view/" + str(ticket.id) + "/")
 
-
+@login_required
 def submit_comment(request, ticket_id):
     text = request.POST["comment-text"]
     time_logged = float(request.POST["comment-time-logged"])
@@ -264,7 +265,7 @@ def submit_comment(request, ticket_id):
 
     return HttpResponseRedirect("/tickets/view/" + str(ticket.id) + "/")
 
-
+@login_required
 def update(request, ticket_id):
     ticket = get_object_or_404(Ticket, pk=ticket_id)
 
@@ -277,7 +278,7 @@ def update(request, ticket_id):
                                                         'priority_list': priority_list, 'status_list': status_list,
                                                         'project_list': project_list})
 
-
+@login_required
 def update_ticket(request, ticket_id):
     ticket = get_object_or_404(Ticket, pk=ticket_id)
 
@@ -341,7 +342,7 @@ def update_ticket(request, ticket_id):
 
     return HttpResponseRedirect("/tickets/view/" + str(ticket.id) + "/")
 
-
+@login_required
 def delete_ticket(request, ticket_id):
     # Get the ticket
     ticket = get_object_or_404(Ticket, pk=ticket_id)
@@ -355,7 +356,7 @@ def delete_ticket(request, ticket_id):
     messages.success(request, "The ticket has been deleted.")
     return HttpResponseRedirect("/tickets/")
 
-
+@login_required
 def delete_comment(request, comment_id):
     # Get the ticket
     comment = get_object_or_404(TicketComment, pk=comment_id)
