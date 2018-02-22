@@ -1,25 +1,25 @@
 {% extends 'base.html'%}
 {% block title %}
-<title>Departments - SU Portal</title>
+<title>Calendar - SU Portal</title>
 {% load static %}
     <link rel="stylesheet" href="{% static "app/stylesheets/cal.css" %}">
 {% endblock %}
 
 {% block content %}
 		<div class="tab">
-		  <button class="tablinks" onclick="openCity(event, 'calendar')">calendar</button>
+		  <button class="tablinks" onclick="openCity(event, 'calendar')" id="defaultOpen">Calendar</button>
 		  <button class="tablinks" onclick="openCity(event, 'Events')">Events</button>
 		</div>
 
 		<div id="calendar" class="tabcontent">
-		  <h3>calendar</h3>
-		  <p><iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=suc%40hyderabad.bits-pilani.ac.in&amp;color=%231B887A&amp;ctz=Asia%2FCalcutta" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe></p>
+		  <p><iframe margin-top="100px" width="100%" height="450px" src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=suc%40hyderabad.bits-pilani.ac.in&amp;color=%231B887A&amp;ctz=Asia%2FCalcutta" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe></p>
 		</div>
 
 		<div id="Events" class="tabcontent">
-		  <h3>Events</h3>
-		  <p><iframe width="1000px" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTWCg-L9WB-wAnxKNSgyuzNZSJHlI97fYnxWBExy4ouMtYUtMOBWSfUyQY6EJdoH6DgJ302hUJvFurb/pubhtml?widget=true&amp;headers=false"></iframe></p> 
+		 <p><iframe height="450px" src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=800&amp;wkst=1&amp;bgcolor=%23818996&amp;src=suc%40hyderabad.bits-pilani.ac.in&amp;color=%23B1440E&amp;ctz=Asia%2FCalcutta" style="border-width:0" width="100%" height="600" frameborder="0" scrolling="no"></iframe></p> 
 		</div>
+		  
+
 		<script>
 		function openCity(evt, cityName) {
 	    var i, tabcontent, tablinks;
@@ -34,6 +34,7 @@
 	    document.getElementById(cityName).style.display = "block";
 	    evt.currentTarget.className += " active";
 		}
+		 document.getElementById("defaultOpen").click();
 	    </script>
 		
 {% endblock %} 
