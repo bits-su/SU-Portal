@@ -5,13 +5,13 @@
 <title>About Us - SU Portal</title>
 {% load static %}
     <link rel="stylesheet" href="{% static "app/stylesheets/aboutus.css" %}">
-    <script src="{% static "app/modals.js" %}" charset="utf-8"></script>   
+    <script src="{% static "app/modals.js" %}" charset="utf-8"></script>
 {% endblock %}
 
 
 {% block content %}
-<div class="grid">
-    <div class="sections #4dd0e1 cyan lighten-2">
+<!-- <div class="grid">
+    <div>
 
             <div id="modal1" class="modal z-depth-4 #e3f2fd blue lighten-5">
                     <div class="modal-content">
@@ -23,7 +23,7 @@
                         <a href="#" id="modal1-close" class="btn modal-action modal-close waves-effect waves-green btn-flat">Close</a>
                     </div>
                 </div>
-            
+
                 <div id="modal2" class="modal z-depth-4 #e3f2fd blue lighten-5">
                     <div class="modal-content">
                         <h3 class="align-left #2196f3 blue-text">Corroboration and Review committee</h3>
@@ -34,7 +34,7 @@
                         <a href="#" id="modal2-close" class="btn modal-action modal-close waves-effect waves-green btn-flat">Close</a>
                     </div>
                 </div>
-            
+
                 <div id="modal3" class="modal z-depth-4 #f3e5f5 purple lighten-5">
                     <div class="modal-content">
                         <h3 class="align-left #9c27b0 purple-text">Student Mess Council</h3>
@@ -62,6 +62,63 @@
                 <a href="techassoc"><div class="#f5f5f5 grey lighten-4 z-depth-4"><span class="flow-text">Tech Assocs</span></div></a>
                 <a href="ngos/"><div class="#f5f5f5 grey lighten-4 z-depth-4"><span class="flow-text">Societies and NGOs</span></div></a>
         </div>
-    </div>    
-</div>    
+    </div>
+</div> -->
+<div id="c-con">
+    <div id="cards">
+        <div class="carde">
+            <div class="content">
+                <p class="title"><a href="#">SU Body</a></p>
+            </div>
+        </div>
+        <div class="carde">
+            <div class="content">
+                <p class="title">SU Events</p>
+            </div>
+        </div>
+        <div class="carde">
+            <div class="content">
+                <p class="title">Election Commission</p>
+                <p class="info">The Election Commission (EC) is a six-member, independent and self-sustaining body of the Students' Union (SU). It is be responsible for conducting free and fair elections for all the organs of the SU. The EC also moderates the General Body Meetings (GBMs). Additionally, the EC makes sure that SU Constitution is upheld by all the position holders.</p>
+            </div>
+        </div>
+        <div class="carde">
+            <div class="content">
+                <p class="title">Corroboration and review committee</p>
+                <p class="info">The Corroboration and Review Committee is a  6-membered neutral body. The CRC audits all receipts and expenditures of the Student Union Council (including the 4 major annuals fests). The CRC is also responsible for scrutinizing and approving the budgets of the above activities and for maintaining and enforcing the Procedure Manual of BPHC.</p>
+            </div>
+        </div>
+        <div class="carde">
+            <div class="content">
+                <p class="title">Students mess council</p>
+                <p class="info">SMC’s are responsible for addressing concerns regarding all mess affairs. They serve as a bridge between mess caterers and the Union.SMC consists of 5 members elected by the Union.SMC also has a feedback page, where every query, suggestion and criticism is appreciated and properly evaluated leading to continual improvement. SMC makes sure that the terms in the contract are being met. SMC also gives suggestions to the Administration about the vendors in the campus. To sumit complaints agaist food stalls or mess food, click <a href="https://docs.google.com/forms/d/e/1FAIpQLSc1XRjTRXL-GKtlylSBLZLtyEXnn3WGkVJnuNJaiz7vA-u2Fw/viewform">Here</a></p>
+            </div>
+        </div>
+        <div class="carde">
+            <div class="content">
+                <p class="title"><a href="clubs/">Clubs</a></p>
+                <p class="info"><a href="clubs/">Know More</a></p>
+            </div>
+        </div>
+        <div class="carde">
+            <div class="content">
+                <p class="title"><a href="depts/">Departments</a></p>
+                <p class="info"><a href="depts/">Know More</a></p>
+            </div>
+        </div>
+        <div class="carde">
+            <div class="content">
+                <p class="title"><a href="techassoc/">Tech Assocs</a></p>
+                <p class="info"><a href="techassoc/">Know More</a></p>
+            </div>
+        </div>
+        <div class="carde">
+            <div class="content">
+                <p class="title"><a href="ngos/">Societies and NGOs</a></p>
+                <p class="info"><a href="ngos/">Know More</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endblock %}>

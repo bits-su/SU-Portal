@@ -60,7 +60,7 @@ Main components
 #cd-main-content {
     position: relative;
     height: 100%;
-    overflow: hidden;
+    /* overflow: hidden; */
     background-color: #3a393f;
     /* slightly visible only when we resize this element */
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
@@ -93,6 +93,7 @@ Main components
     height: 100%;
     background: url("/static/app/bphc.jpeg") no-repeat center center;
     background-size: cover;
+    background-attachment: fixed;
     z-index: 0;
 }
 #cd-intro h1 {
@@ -143,7 +144,7 @@ Main components
 
 .cd-header {
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
     width: 100%;
     height: 50px;
@@ -152,6 +153,10 @@ Main components
     -webkit-transition: background 0.2s;
     -moz-transition: background 0.2s;
     transition: background 0.2s;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 @media only screen and (min-width: 768px) {
     .cd-header {
@@ -185,10 +190,18 @@ Main components
 #cd-logo img {
     display: block;
 }
+#title {
+    font-size: 1.2em;
+    color: white;
+}
 @media only screen and (min-width: 768px) {
     #cd-logo {
         left: 20px;
         top: 24px;
+    }
+    #title {
+        top: 24px;
+        left: 120px;
     }
 }
 @media only screen and (min-width: 1170px) {
@@ -430,9 +443,9 @@ Main components
     z-index: -1;
 }
 #login {
-    position: absolute;
+    position: fixed;
     color: white;
-    top: 5%;
+    bottom: 5%;
     right: 2.5%;
     text-align: center;
     font-size: 18px;
@@ -547,62 +560,6 @@ input {
 #login-failed-message {
     color:red;
 }
- a {
-    color: black;
-} */
-
- body {
-  font-family: 'Open Sans', 'sans-serif';
-  color: #cecece;
-  background: #222;
-  overflow: hidden;
-}
-
-.item-1,
-.item-2,
-.item-3 {
-    position: absolute;
-  display: block;
-    top: 2em;
-
-  width: 60%;
-
-  font-size: 2em;
-
-    animation-duration: 20s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-}
-
-.item-1{
-    animation-name: anim-1;
-}
-
-.item-2{
-    animation-name: anim-2;
-}
-
-.item-3{
-    animation-name: anim-3;
-}
-
-@keyframes anim-1 {
-    0%, 8.3% { left: -100%; opacity: 0; }
-  8.3%,25% { left: 25%; opacity: 1; }
-  33.33%, 100% { left: 110%; opacity: 0; }
-}
-
-@keyframes anim-2 {
-    0%, 33.33% { left: -100%; opacity: 0; }
-  41.63%, 58.29% { left: 25%; opacity: 1; }
-  66.66%, 100% { left: 110%; opacity: 0; }
-}
-
-@keyframes anim-3 {
-    0%, 66.66% { left: -100%; opacity: 0; }
-  74.96%, 91.62% { left: 25%; opacity: 1; }
-  100% { left: 110%; opacity: 0; }
-} 
 #bus-menu{
     display:flex;
     flex-direction: row;
