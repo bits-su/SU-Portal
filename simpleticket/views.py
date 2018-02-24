@@ -86,7 +86,8 @@ def view_all(request):
     #     args['project'] = project_filter
     # tickets = Ticket.objects.filter(**args)
 
-    status_open = Status.objects.get(name="open")
+    # Display only "open: Visible" complaints. No filters work.
+    status_open = Status.objects.get(name="open: Visible")
     tickets = Ticket.objects.filter(status=status_open)
 
     # Filter out closed tickets
