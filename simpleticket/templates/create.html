@@ -85,7 +85,21 @@
             <input style="font-size:0.8em;" type="text" name="name" id="name" value="{{ name }}" class="form-control"/>
             <label for="desc"><h4>Description</h4></label>
             <textarea name="desc" id="desc" class="form-control"></textarea>
+
+            <div id="post_as_anonymous" onclick="check_fn();">
+                <input name="post_as_anonymous" type="checkbox" id="anonymous"/>
+                <label id="anonymous">Post anonymously</label>
+            </div>
+
             <input type="submit" class="btn btn-primary btn-lg" value="Submit" />
         </div>
     </form>
+
+    <script>
+    function check_fn(){
+            var checkbox = document.getElementById('anonymous');
+            checkbox.checked?checkbox.checked=false:checkbox.checked=true;
+        }
+    </script>
+
 {% endblock %}

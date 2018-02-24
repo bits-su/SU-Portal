@@ -41,7 +41,7 @@
             {% if request.user.is_superuser or request.user.is_staff or request.user.username == ticket.created_by.username %}
             <button id="delete-complaints-button" class="btn">Delete</button>
             {% endif %}
-            
+
         </div>
         <script type="text/javascript">
             $("#create-ticket-button").click(function() {
@@ -85,7 +85,8 @@
         </div>
         <div class="col-md-5 ticket-created-view">
             <div id="created_by">
-                <label>Created by</label> <a href="/tickets/?created_by={{ ticket.assigned_to.id }}">{{ ticket.created_by.username }}</a>
+                <!-- <label>Created by</label> <a href="/tickets/?created_by={{ ticket.assigned_to.id }}">{{ ticket.created_by.username }}</a> -->
+                <label>Created by</label> {{ ticket.created_by.first_name }} {{ ticket.created_by.last_name }}
             </div>
 
             <div id="assigned_to" class="hidden">

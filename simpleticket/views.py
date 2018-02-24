@@ -198,7 +198,11 @@ def submit_ticket(request):
     ticket.project = Project.objects.get(pk=int(request.POST.get('project',False)))
     ticket.priority = Priority.objects.get(pk=int(request.POST['priority']))
     ticket.status = Status.objects.get(pk=int(request.POST['status']))
-    ticket.created_by = request.user
+    anon = request.POST.get('post_as_anonymous')
+    if(anon):
+        ticket.created_by = User.objects.get(username="pseudo")
+    else:
+        ticket.created_by = request.user
 
     # Handle case of unassigned tickets
     assigned_option = request.POST['assigned']
