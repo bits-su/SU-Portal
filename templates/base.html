@@ -1,7 +1,6 @@
 <html>
 <head>
     {% load static %}
-    <link type="text/css" rel="stylesheet" href="{% static 'materialize/bin/materialize.css' %}"  media="screen,projection"/>
     <link rel="stylesheet" href="{% static "app/stylesheets/home.css" %}">
     <link rel="stylesheet" href="{% static "app/stylesheets/simpleview.css" %}">
 
@@ -15,22 +14,23 @@
     {% endblock %}
 </head>
 <body>
-    <main id="cd-main-content">
-        <section id="cd-intro">
-            {% block content %}
-            {% endblock %}
-            <div id="blur-it-all">
-            </div>
-            <header class="cd-header">
-                <div id="cd-logo"><a href="/"><img src="{% static "app/logo.png" %}" alt="Logo" style="height:40px;"></a></div>
-                <div id="title">
-                    <a href="/">SU Portal</a>
+    <div id="main-wrapper">
+        <main id="cd-main-content">
+            <section id="cd-intro">
+                {% block content %}
+                {% endblock %}
+                <div id="blur-it-all">
                 </div>
-                <a class="cd-menu-trigger" href="#main-nav">Menu<span></span></a>
-            </header>
-            <div class="cd-blurred-bg"></div>
-        </section>
-    </main>
+                <header class="cd-header">
+                    <div id="cd-logo"><a href="/"><img src="{% static "app/logo.png" %}" alt="Logo" style="height:40px;"></a></div>
+                    <div id="title">
+                        <a href="/">SU Portal</a>
+                    </div>
+                    <a class="cd-menu-trigger" href="#main-nav">Menu<span></span></a>
+                </header>
+                <div class="cd-blurred-bg"></div>
+            </section>
+        </main>
 
     <div class="cd-shadow-layer"></div>
     <div id="login">
@@ -55,5 +55,6 @@
         </ul>
         <a href="#" class="cd-close-menu">Close<span></span></a>
     </div>
+
 </body>
 </html>

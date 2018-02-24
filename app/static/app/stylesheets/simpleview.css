@@ -3,12 +3,11 @@
     padding:0;
 }
 .table-viewall{
-    padding:1em;
-    margin-left:5em;
     text-align:center;
     color:black;
-    background-color:white;
-    opacity:0.9;
+    background-color: rgba(255,255,255,0.8);
+    width: 80vw;
+    border-radius: 3px;
 }
 .list-head-viewall > td > a{
     color:black;
@@ -18,64 +17,45 @@
 }
 .list-head-viewall >td {
     border-bottom:1px solid black;
-}    
+}
 .table-viewall > thead > tr > td{
     font-size:1.5em;
-    padding-left:2em;
 }
 .table-viewall > tbody > tr > td{
     font-size:1.25em;
-    padding-left:2em;
 }
 .table-viewall > tbody,thead > tr > .ticket-name-viewall{
     width:70%;
     text-align:center;
 }
 .simple-view{
-    font-size:20px;
     color:black;
-    padding:1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .hidden{
     display:none;
-}
-.row-view{
-    padding-top:1em;
-    padding-left:2em;
-    background-color: white;
-    margin-top:2em;
-}
-.description-view{
-    margin:1em;
-}
-#description-content-view{
-    margin:1em;
 }
 .ticket-view{
     display:flex;
     flex-direction:row;
     justify-content:space-around;
-    padding-right:3em;
-    margin-top:1em;
 }
 .contents-view{
-    padding:1em;
-    background-color: white;
+    padding: 20px;
 }
 .ticket-comments-view{
     display:flex;
     flex-direction:column;
-    background-color: white;
-    opacity:0.9;
-    padding:2em;
     justify-content:space-between;
+    padding: 20px;
 }
 .ticket-comment-main{
     display:flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: white;
-    padding-top:1em;
 }
 .delete-comment-view > a{
     color:black;
@@ -84,18 +64,117 @@
     padding-bottom:1em;
     border-bottom: 1px solid gray;
 }
-#create-ticket-div-update{
-    padding-top:7.5em;
-}
 .form-update{
-    padding:5em;
     font-size:2em;
     color:black;
 }
-.form-group-update{
-    padding:2em;
-    background-color:white;
+#create-ticket-button > a {
+    background-color: #039be5;
+    color: white;
+    border-radius: 3px;
+    height: 40px;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px;
+    margin-left: 20px;
 }
-.form-group-update > input {
-    margin:2em;
+.filter-message {
+    color: white;
+}
+.top-button {
+    background-color: #039be5;
+    color: white;
+    border-radius: 3px;
+    height: 40px;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px;
+    margin-left: 20px;
+    cursor: pointer;
+    margin-top: 100px;
+}
+.form-container {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+.form-container > form {
+    background-color: rgba(255,255,255,0.8);
+    padding: 30px;
+    border-radius: 3px;
+    color: white;
+    width: 40vw;
+}
+.form-group-update {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 0.6em;
+}
+textarea,input {
+    margin-bottom: 20px;
+	border: 1px solid rgba(255, 255, 255, 0.4);
+	background-color: rgba(255, 255, 255, 0.2);
+	width: 80%;
+	border-radius: 3px;
+	padding: 10px 15px;
+	margin: 0 auto 10px auto;
+	display: block;
+	font-size: 18px;
+	color: black;
+	-webkit-transition-duration: 0.25s;
+	transition-duration: 0.25s;
+    font-weight: 300;
+}
+#post_as_anonymous {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.submit {
+    background-color: #039be5;
+    color: white;
+    border-radius: 3px;
+    height: 40px;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px;
+    cursor: pointer;
+}
+.ticket-created-view {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#info-container {
+    background-color: rgba(255,255,255,0.8);
+    padding: 30px;
+    border-radius: 3px;
+    width: 40vw;
+}
+label {
+    color: black;
+    font-size: 1em;
+    width: 80%;
+}
+.description-view {
+    font-size: 1em !important;
+}
+#description-content-view {
+    text-align: center;
+    padding: 5px;
+
+}
+#table-con {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    border-radius: 3px;
 }

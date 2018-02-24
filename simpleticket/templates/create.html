@@ -1,43 +1,45 @@
 {% extends "base.html" %}
 
 {% block head %}
-    <script src="/static/ckeditor/ckeditor.js"></script>
-    <script src="/static/ckeditor/adapters/jquery.js"></script>
-    <style type="text/css">
-        #create-ticket-div {
-            text-align: right;
-        }
-    </style>
-    <script type="text/javascript">
-        $(document).ready( function() {
-            $('#desc').ckeditor({
-                toolbarGroups: [
-                    { name: 'document',	   groups: [ 'mode', 'document' ] },
-                    { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
-                    { name: 'links' },
-                    { name: 'styles' },
-                    { name: 'colors' },
-                    { name: 'paragraph',   groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ] }
-                ],
-                contentsCss: [CKEDITOR.basePath + 'contents.css', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css']
-            });
-        } );
-    </script>
+<title>Add Complaint - SU Portal</title>
+<script src="/static/ckeditor/ckeditor.js"></script>
+<script src="/static/ckeditor/adapters/jquery.js"></script>
+<style type="text/css">
+#create-ticket-div {
+    text-align: right;
+}
+</style>
+<script type="text/javascript">
+$(document).ready( function() {
+    $('#desc').ckeditor({
+        toolbarGroups: [
+            { name: 'document',	   groups: [ 'mode', 'document' ] },
+            { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
+            { name: 'links' },
+            { name: 'styles' },
+            { name: 'colors' },
+            { name: 'paragraph',   groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ] }
+        ],
+        contentsCss: [CKEDITOR.basePath + 'contents.css', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css']
+    });
+} );
+</script>
 {% endblock %}
 
 {% block content %}
-    <div id="create-ticket-div-update">
-        <div class="col-md-6 ticket-view">
-            <div class="waves-effect waves-light btn-large" id="view-all-button">All Complaints</div>
-            <!-- <div class="waves-effect waves-light btn-large"><a style="color:white;" href="/tickets/?user={{ user.id }}">View My Complaints</a></div> -->
-        </div>
-        <script type="text/javascript">
-            $("#view-all-button").click(function() {
-                window.location.href = "/tickets/";
-            });
-        </script>
+<div id="create-ticket-div-update">
+    <div class="col-md-6 ticket-view">
+        <div class="top-button" id="view-all-button">All Complaints</div>
+        <!-- <div class="waves-effect waves-light btn-large"><a style="color:white;" href="/tickets/?user={{ user.id }}">View My Complaints</a></div> -->
     </div>
+    <script type="text/javascript">
+    $("#view-all-button").click(function() {
+        window.location.href = "/tickets/";
+    });
+    </script>
+</div>
 
+<div class="form-container">
     <form class="form-update" action="/tickets/submit_ticket/" method="POST">
         {% csrf_token %}
         <div class="row">
@@ -46,7 +48,7 @@
                     <label for="project">Project</label>
                     <select id="project"  name="project" class="form-control">
                         {% for project in project_list %}
-                            <option value="{{ project.id }}" {% if project.is_default %}selected="selected"{% endif %}>{{ project.name }}</option>
+                        <option value="{{ project.id }}" {% if project.is_default %}selected="selected"{% endif %}>{{ project.name }}</option>
                         {% endfor %}
                     </select>
                 </div>
@@ -54,7 +56,7 @@
                     <label for="priority">Priority</label>
                     <select id="priority"  name="priority" class="form-control">
                         {% for priority in priority_list %}
-                            <option value="{{ priority.id }}" {% if priority.is_default %}selected="selected"{% endif %} style="color: {{ priority.display_color }};">{{ priority.name }}</option>
+                        <option value="{{ priority.id }}" {% if priority.is_default %}selected="selected"{% endif %} style="color: {{ priority.display_color }};">{{ priority.name }}</option>
                         {% endfor %}
                     </select>
                 </div>
@@ -64,7 +66,7 @@
                     <label for="status">Status</label>
                     <select id="status"  name="status" class="form-control">
                         {% for status in status_list %}
-                            <option value="{{ status.id }}" {% if status.is_default %}selected="selected"{% endif %}>{{ status.name }}</option>
+                        <option value="{{ status.id }}" {% if status.is_default %}selected="selected"{% endif %}>{{ status.name }}</option>
                         {% endfor %}
                     </select>
                 </div>
@@ -73,7 +75,7 @@
                     <select id="assigned"  name="assigned" selected="selected" class="form-control">
                         <option value="unassigned">Unassigned</option>
                         {% for member in tab_users %}
-                            <option value="{{ member.id }}">{{ member.username }}</option>
+                        <option value="{{ member.id }}">{{ member.username }}</option>
                         {% endfor %}
                     </select>
                 </div>
@@ -81,9 +83,9 @@
         </div>
 
         <div class="form-group-update">
-            <label for="name"><h4>Complaint-topic</h4></label>
-            <input style="font-size:0.8em;" type="text" name="name" id="name" value="{{ name }}" class="form-control"/>
-            <label for="desc"><h4>Description</h4></label>
+            <label for="name">Complaint Topic</label>
+            <input type="text" name="name" id="name" value="{{ name }}" />
+            <label for="desc">Description</label>
             <textarea name="desc" id="desc" class="form-control"></textarea>
 
             <div id="post_as_anonymous" onclick="check_fn();">
@@ -91,15 +93,17 @@
                 <label id="anonymous">Post anonymously</label>
             </div>
 
-            <input type="submit" class="btn btn-primary btn-lg" value="Submit" />
+            <input type="submit" class="submit" value="Submit" />
         </div>
     </form>
+</div>
 
-    <script>
-    function check_fn(){
-            var checkbox = document.getElementById('anonymous');
-            checkbox.checked?checkbox.checked=false:checkbox.checked=true;
-        }
-    </script>
+
+<script>
+function check_fn(){
+    var checkbox = document.getElementById('anonymous');
+    checkbox.checked?checkbox.checked=false:checkbox.checked=true;
+}
+</script>
 
 {% endblock %}

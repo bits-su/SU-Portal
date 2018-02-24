@@ -1,53 +1,51 @@
 {% extends "base.html" %}
 {% block head %}
-    <title>Complaints</title>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $("#topnav-tickets").addClass("active");
-        });
-    </script>
+<title>Complaints</title>
+<script type="text/javascript">
+$(document).ready(function() {
+    $("#topnav-tickets").addClass("active");
+});
+</script>
 {% endblock %}
 
 {% block content %}
-    <div class="complaints-block">
+<div class="complaints-block">
     {% if filter_message %}
-        <div class="filter-message">{{ filter_message }}</div>
+    <div class="filter-message">{{ filter_message }}</div>
     {% endif %}
 
     {% comment %}
     {% if tickets.object_list.count > 0 %}
-        <div class="pagination">
-            <span class="step-links">
-                {% if tickets.has_previous %}
-                    <a href="{{ prev_link }}">&lt; Previous</a> |
-                {% endif %}
+    <div class="pagination">
+        <span class="step-links">
+            {% if tickets.has_previous %}
+            <a href="{{ prev_link }}">&lt; Previous</a> |
+            {% endif %}
 
-                <span class="current">
-                    Page {{ tickets.number }} of {{ tickets.paginator.num_pages }}
-                </span>
-
-                {% if tickets.has_next %}
-                    | <a href="{{ next_link }}">Next &gt;</a>
-                {% endif %}
+            <span class="current">
+                Page {{ tickets.number }} of {{ tickets.paginator.num_pages }}
             </span>
-        </div>
+
+            {% if tickets.has_next %}
+            | <a href="{{ next_link }}">Next &gt;</a>
+            {% endif %}
+        </span>
+    </div>
     {% endif %}
     {% endcomment %}
-    <br><br>
     <div id="create-ticket-div">
         <!-- <button id="project-view-button" class="btn ticket-button">Project View</button> -->
         <div id="view-all-button" class="btn ticket-button" {% if filter == 'All' %}disabled="disabled"{% endif %}>View all complaints</div>
         <div id="create-ticket-button" class="btn btn-success ticket-button"><a style="color:white;" href="/tickets/new/">Add a complaint</a></div>
         <script type="text/javascript">
-            $("#view-all-button").click(function() {
-                window.location.href = "/tickets/";
-            });
-            $("#project-view-button").click(function() {
-                window.location.href = "/tickets/project/";
-            });
+        $("#view-all-button").click(function() {
+            window.location.href = "/tickets/";
+        });
+        $("#project-view-button").click(function() {
+            window.location.href = "/tickets/project/";
+        });
         </script>
     </div>
-    <br>
 
     <div id="messages">
         {% if messages %}
@@ -60,6 +58,7 @@
     </div>
 
     {% if tickets.object_list.count > 0 %}
+    <div id="table-con">
         <table class="table-viewall table-striped table-bordered table-hover">
             <thead>
                 <tr class="list-head-viewall">
@@ -87,43 +86,43 @@
             </thead>
             <tbody>
                 {% for ticket in tickets.object_list %}
-                    <tr id="table-content-viewall" class="{% cycle 'odd' 'even' %}">
-                        <td>{{ ticket.id }}</td>
-                        <td  class="ticket-name-viewall"><a href="/tickets/view/{{ ticket.id }}/">{{ ticket.name }}</a></td>
-                        <td><a href="/tickets/?priority={{ ticket.priority.id }}" style="color: {{ ticket.priority.display_color }};">{{ ticket.priority.name }}</a></td>
-                        <td>{{ ticket.update_time }}</td>
-                    </tr>
+                <tr id="table-content-viewall" class="{% cycle 'odd' 'even' %}">
+                    <td>{{ ticket.id }}</td>
+                    <td  class="ticket-name-viewall"><a href="/tickets/view/{{ ticket.id }}/">{{ ticket.name }}</a></td>
+                    <td><a href="/tickets/?priority={{ ticket.priority.id }}" style="color: {{ ticket.priority.display_color }};">{{ ticket.priority.name }}</a></td>
+                    <td>{{ ticket.update_time }}</td>
+                </tr>
                 {% endfor %}
             </tbody>
         </table>
 
-        <div class="pagination">
-            <span class="step-links">
-                {% if tickets.has_previous %}
-                    <a href="{{ prev_link }}">&lt; Previous</a> |
-                {% endif %}
+    </div>
 
-                <span class="current">
-                    Page {{ tickets.number }} of {{ tickets.paginator.num_pages }}
-                </span>
+    <div class="pagination">
+        <span class="step-links">
+            {% if tickets.has_previous %}
+            <a href="{{ prev_link }}">&lt; Previous</a> |
+            {% endif %}
 
-                {% if tickets.has_next %}
-                    | <a href="{{ next_link }}">Next &gt;</a>
-                {% endif %}
+            <span class="current">
+                Page {{ tickets.number }} of {{ tickets.paginator.num_pages }}
             </span>
-        </div>
+
+            {% if tickets.has_next %}
+            | <a href="{{ next_link }}">Next &gt;</a>
+            {% endif %}
+        </span>
+    </div>
     {% else %}
-        <br/><br/>
     {% endif %}
 
     {% comment %}
     {% if show_closed == 'true' %}
-        <div class="show-closed">[ <a href="{{ base_url }}&show_closed=false&sort={{ sort }}&order={{ order }}">Hide Closed Tickets</a> ]</div>
+    <div class="show-closed">[ <a href="{{ base_url }}&show_closed=false&sort={{ sort }}&order={{ order }}">Hide Closed Tickets</a> ]</div>
     {% else %}
-        <div class="show-closed">[ <a href="{{ base_url }}&show_closed=true&sort={{ sort }}&order={{ order }}">Show Closed Tickets</a> ]</div>
+    <div class="show-closed">[ <a href="{{ base_url }}&show_closed=true&sort={{ sort }}&order={{ order }}">Show Closed Tickets</a> ]</div>
     {% endif %}
     {% endcomment %}
 
-    <br/>
-    </div>
+</div>
 {% endblock %}
