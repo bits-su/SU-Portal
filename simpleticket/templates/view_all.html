@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block head %}
+    <title>Complaints</title>
     <script type="text/javascript">
         $(document).ready(function() {
             $("#topnav-tickets").addClass("active");
@@ -47,6 +48,17 @@
         </script>
     </div>
     <br>
+
+    <div id="messages">
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+
     {% if tickets.object_list.count > 0 %}
         <table class="table-viewall table-striped table-bordered table-hover">
             <thead>

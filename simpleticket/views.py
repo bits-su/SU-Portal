@@ -134,7 +134,7 @@ def view_all(request):
 
     # Handle the case of no visible tickets
     if tickets.count() < 1:
-        filter_message = "No tickets meet the current filtering critera."
+        filter_message = "No complaints meet the current filtering critera."
 
     # Generate the base URL for showing closed tickets & sorting
     get_dict = request.GET.copy()
@@ -227,7 +227,7 @@ def submit_ticket(request):
     #                        request.get_host() + '/tickets/view/' + str(ticket.id) + '/\n\n'
     #     email_user(ticket.assigned_to, "Ticket Assigned: " + ticket.name, message_preamble + ticket.desc)
 
-    messages.success(request, "The ticket has been created.")
+    messages.success(request, "The complaint has been added.")
 
     return HttpResponseRedirect("/tickets/view/" + str(ticket.id) + "/")
 
@@ -354,7 +354,7 @@ def update_ticket(request, ticket_id):
     #                        request.get_host() + '/tickets/view/' + str(ticket.id) + '/\n\n'
     #     email_user(ticket.assigned_to, "Ticket Update: " + ticket.name, message_preamble + ticket.desc)
 
-    messages.success(request, "The ticket has been updated.")
+    messages.success(request, "The complaint has been updated.")
 
     return HttpResponseRedirect("/tickets/view/" + str(ticket.id) + "/")
 
@@ -376,7 +376,7 @@ def delete_ticket(request, ticket_id):
     # Delete the ticket
     ticket.delete()
 
-    messages.success(request, "The ticket has been deleted.")
+    messages.success(request, "The complaint has been deleted.")
     return HttpResponseRedirect("/tickets/")
 
 @login_required

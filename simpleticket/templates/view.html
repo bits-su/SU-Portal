@@ -32,7 +32,7 @@
         <div class="col-md-6 ticket-view">
             <button id="view-all-button" class="btn ticket-button">All Complaints</button>
             <button id="create-ticket-button" class="btn btn-success ticket-button">New Complaint</button>
-            <button id="view-my-complaints-button" class="btn">View My Complaints</button>
+            <!-- <button id="view-my-complaints-button" class="btn">View My Complaints</button> -->
 
             {% if request.user.is_superuser or request.user.username == ticket.created_by.username %}
             <button id="update-complaints-button" class="btn">Update</button>
@@ -66,6 +66,17 @@
     </div>
 
     <div class="row-view">
+
+        <div id="messages">
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+
         <div class="col-md-5 hidden">
             <div id="project hide">
                 <label>Project</label> <a href="/tickets/?project={{ ticket.project.id }}">{{ ticket.project.name }}</a>
@@ -168,7 +179,8 @@
                     {% endif %}
                     <div class="col-md-9 comment-text">{{ comment.text|safe|linebreaksbr }}</div>
                     <div class=" col-md-3 comment-info ticket-comment-details-view">
-                        <div class="commenter"><label>User:</label><a href="/tickets/?created_by=1">{{ comment.commenter.username }}</a></div>
+                        <!-- <div class="commenter"><label>User:</label><a href="/tickets/?created_by=1">{{ comment.commenter.username }}</a></div> -->
+                        <div class="commenter"><label>User:</label>{{ comment.commenter.first_name }} {{ comment.commenter.last_name }}</div>
                         <div class="update-time"><label>time:</label>{{ comment.update_time|date:"H:i, d/m/y" }}</div>
                         <div class="time-logged hidden"><label>Time Logged</label>{{ comment.time_logged }} hours</div>
                     </div>
