@@ -443,15 +443,18 @@ Main components
     z-index: -1;
 }
 #login {
-    position: fixed;
-    color: white;
-    bottom: 5%;
-    right: 2.5%;
-    text-align: center;
-    font-size: 18px;
-    font-size: 1.125rem;
-    color: #ffffff;
-    z-index: 2;
+	position: fixed;
+	color: white;
+	bottom: 5%;
+	right: 2.5%;
+	text-align: center;
+	font-size: 18px;
+	font-size: 1.125rem;
+	color: #ffffff;
+	z-index: 2;
+	background-color: rgba(58, 57, 63, 0.6);
+	border-radius: 3px;
+	padding: 7.5px 10px;
 }
 .complaints-block {
     border-radius:20px;
