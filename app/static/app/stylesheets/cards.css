@@ -42,3 +42,9 @@
     font-size: 1.2em;
     padding: 2vw;
 }
+.morecontent span {
+    display: none;
+}
+.morelink {
+    display: block;
+}
