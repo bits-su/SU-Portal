@@ -15,6 +15,7 @@ urlpatterns = [
     path('submit_complaint',views.submit_complaint, name='submit-complaint'),
     path('calendar/', views.calendar, name='calendar'),
     path('clubs/', views.clubs, name='clubs'),
+    path('aboutus/suevents/', views.suevents, name='suevents'),
     path('logout/', views.logout_view, name='logout'),
     path('contact/', views.contact, name="contact-us"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

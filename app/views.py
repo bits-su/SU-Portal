@@ -87,6 +87,9 @@ def techassoc(request):
 def ngos(request):
     return render(request, 'ngos.html')    
 
+def suevents(request):
+    return render(request, 'suevents.html')    
+
 def logout_view(request):
     logout(request)
     return home(request)
