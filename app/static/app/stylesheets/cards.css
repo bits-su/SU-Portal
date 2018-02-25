@@ -12,7 +12,7 @@
     width: 80vw;
 }
 .carde {
-    min-width: 25.6vw;
+    min-width: 300px;
     text-align: center;
     color: black;
     flex-grow: 1;
