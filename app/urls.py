@@ -1,6 +1,7 @@
 from django.urls import path
-
+from django.conf.urls.static import static
 from . import views
+from django.conf import settings
 
 urlpatterns = [
     path('', views.home, name='home'),
@@ -15,4 +16,5 @@ urlpatterns = [
     path('calendar/', views.calendar, name='calendar'),
     path('clubs/', views.clubs, name='clubs'),
     path('logout/', views.logout_view, name='logout'),
-]
+    path('contact/', views.contact, name="contact-us"),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

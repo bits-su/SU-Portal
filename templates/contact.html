@@ -9,18 +9,17 @@
 {% block content %}
 <h1>ABOUT US</h1>
 	{% if members %}
-	
+
 		{% for member in members%}
 		<div class = "gallery">
-			<a target="_blank" href="{{member.image}}">
-				<img src="{{member.image}}" width="300" height="200">
-			</a>
+				<img src="{{ member.image.url }}" width="300" height="200">
 			<div class="desc">
 				 <p>{{member.first_name}} {{member.last_name}}<br>{{member.phone}}</p>
 			</div>
+			<br/>
 		{% endfor %}
-	
+
 	{% else %}
 		<strong>There are no contacts in the list</strong>
 	{% endif %}
-{% endblock %}	
+{% endblock %}
