@@ -29,6 +29,13 @@
     justify-content: center;
     align-items: center;
 }
+.content > img {
+    max-height: 25.6vw;
+    margin: 20px;
+}
+.name {
+    margin: 10px;
+}
 .info {
     max-width: 90%;
 }
@@ -47,4 +54,16 @@
 }
 .morelink {
     display: block;
+}
+.social {
+    position: relative;
+    bottom: 0;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.social svg {
+    margin: 5px;
 }

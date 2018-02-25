@@ -3,23 +3,31 @@
 	{% block title %}
 	    <title>Contact Details - SU Portal</title>
 	{% load static %}
-    <link rel="stylesheet" href="{% static "app/stylesheets/contact.css" %}">
+    <link rel="stylesheet" href="{% static "app/stylesheets/cards.css" %}">
+	<script defer="true" src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 	{% endblock %}
 
 {% block content %}
-<h1>ABOUT US</h1>
-	{% if members %}
-
+{% if members %}
+<div id="c-con">
+    <div id="cards">
 		{% for member in members%}
-		<div class = "gallery">
-				<img src="{{ member.image.url }}" width="300" height="200">
-			<div class="desc">
-				 <p>{{member.first_name}} {{member.last_name}}<br>{{member.phone}}</p>
-			</div>
-		</div>
+        <div class="carde">
+            <div class="content">
+                <img src="{{ member.image.url }}">
+                <p class="name">{{member.first_name}} {{member.last_name}}</p>
+				<div class="social">
+					<p><i class="fas fa-phone"></i></p>
+					<p class="contact-no">{{member.phone}}</p>
+				</div>
+            </div>
+
+        </div>
 		{% endfor %}
 
 	{% else %}
 		<strong>There are no contacts in the list</strong>
 	{% endif %}
+    </div>
+</div>
 {% endblock %}
