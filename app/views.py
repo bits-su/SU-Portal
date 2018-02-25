@@ -36,7 +36,7 @@ def show_user_info(request, user_id):
 def contact(request):
 	#user = User.objects.get(id=user_id)
 	context = RequestContext(request)
-	contact_list = User.objects.filter(is_staff=True)
+	contact_list = User.objects.filter(groups__name='SU Council')
 	context_dict = {'members': contact_list}
 	return render(request, 'contact.html', context_dict, context)
 
