@@ -3,6 +3,7 @@
     justify-content: center;
     max-height: 100vh;
     overflow: auto;
+    width: 100vw;
 }
 #cards{
     display: flex;

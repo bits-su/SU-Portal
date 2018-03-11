@@ -95,13 +95,15 @@ Main components
     background-size: cover;
     background-attachment: fixed;
     z-index: 0;
+    display: flex;
+    justify-content: center;
 }
 #main-wrapper {
     max-height: 100vh;
     overflow: auto;
 }
 #cd-intro h1 {
-    position: absolute;
+    position: relative;
     width: 90%;
     left: 50%;
     top: 50%;
@@ -119,7 +121,7 @@ Main components
     color: #ffffff;
 }
 #cd-intro h2 {
-    position: absolute;
+    position: relative;
     width: 90%;
     left: 50%;
     top: 60%;
@@ -415,7 +417,15 @@ Main components
 .no-js #main-nav .cd-close-menu {
     display: none;
 }
-
+li.multi {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+li.multi > a {
+    flex-grow: 1;
+}
 .cd-shadow-layer {
     position: fixed;
     top: 0;
@@ -572,4 +582,33 @@ input {
     flex-wrap:wrap;
     justify-content: space-around;
     align-items:center;
+}
+#landing {
+    width: 100vw;
+    height: 100vh;
+    overflow-y: scroll;
+}
+.landing-div {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+#intro {
+    height: 100vh;
+}
+.landing-div > h3 {
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 3px;
+    text-align: center;
+    font-size: 1.5em;
+}
+.landing-div > p {
+    color: white;
+    padding: 45px;
+    line-height: 1.1em;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: lighter;
 }
