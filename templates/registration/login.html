@@ -29,7 +29,7 @@
             <h1>SU Portal</h1>
             <a href="/"> / Home</a>
         </div>
-        <form method="post">
+        <form id="login-form" method="post">
             {% csrf_token %}
             {{ form.as_p }}
             <input type="submit" value="Login">
