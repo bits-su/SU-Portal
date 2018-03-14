@@ -1,0 +1,17 @@
+
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Resources</title>
+{% load static %}
+{% endblock %}
+
+{% block content %}
+<div style="margin-top: 100px;">
+	 <a href="{%static "pdf/pearl.pdf" %}" target="_blank">Pearl Charter</a><br><br>
+	 <a href="{%static "pdf/arena.pdf" %}" target="_blank">Arena Charter</a><br><br>
+   	 <a href="{%static "pdf/atmos.pdf" %}" target="_blank">Atmos Charter</a><br><br>
+   	 <a href="{%static "pdf/vm.pdf" %}" target="_blank">Verba Maximus Charter</a><br><br>
+   	 <a href="{%static "pdf/su.pdf" %}" target="_blank">Students' Union Constitution</a><br><br>
+</div><br>
+{% endblock %}

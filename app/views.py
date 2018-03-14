@@ -12,7 +12,8 @@ from django.urls import reverse
 from django.contrib import messages
 
 from .forms import ComplaintForm
-
+from wsgiref.util import FileWrapper
+import os
 
 def home(request):
     if(request.user.is_authenticated):
@@ -93,3 +94,46 @@ def suevents(request):
 def logout_view(request):
     logout(request)
     return home(request)
+
+def resources(request):
+    return render(request, 'resources.html')
+
+def pdf_atmos(request, filename):
+    path = os.path.abspath('/static/pdf/')
+    f = open(path+filename, "rb")
+    response = HttpResponse(FileWrapper(f), content_type='application/pdf')
+    response['Content-Disposition'] = 'attachment; filename=atmos.pdf'
+    f.close()
+    return response
+
+def pdf_pearl(request, filename):
+    path = os.path.abspath('/static/pdf/')
+    f = open(path+filename, "rb")
+    response = HttpResponse(FileWrapper(f), content_type='application/pdf')
+    response['Content-Disposition'] = 'attachment; filename=pearl.pdf'
+    f.close()
+    return response
+
+def pdf_arena(request, filename):
+    path = os.path.abspath('/static/pdf/')
+    f = open(path+filename, "rb")
+    response = HttpResponse(FileWrapper(f), content_type='application/pdf')
+    response['Content-Disposition'] = 'attachment; filename=arena.pdf'
+    f.close()
+    return response
+
+def pdf_vm(request, filename):
+    path = os.path.abspath('/static/pdf/')
+    f = open(path+filename, "rb")
+    response = HttpResponse(FileWrapper(f), content_type='application/pdf')
+    response['Content-Disposition'] = 'attachment; filename=vm.pdf'
+    f.close()
+    return response
+
+def pdf_su(request, filename):
+    path = os.path.abspath('/static/pdf/')
+    f = open(path+filename, "rb")
+    response = HttpResponse(FileWrapper(f), content_type='application/pdf')
+    response['Content-Disposition'] = 'attachment; filename=su.pdf'
+    f.close()
+    return response
