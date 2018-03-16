@@ -27,12 +27,13 @@
 {% endblock %}
 
 {% block content %}
+<div id="up-wrapper">
     <div id="create-ticket-div-update">
         <div class="col-md-6 ticket-view">
-            <button id="view-all-button" class="btn ticket-button">All Tickets</button>
-            <button id="create-ticket-button" class="btn btn-success ticket-button">Create New Ticket</button>
-            <button id="view-my-tickets" class="btn">View My Tickets</button>
-            <button id="view-ticket" class="btn">View Ticket</button> 
+            <button id="view-all-button" class="top-button submit btn ticket-button">All Tickets</button>
+            <button id="create-ticket-button" class="top-button submit btn ticket-button">Create New Ticket</button>
+            <button id="view-my-tickets" class="top-button submit btn ticket-button">View My Tickets</button>
+            <button id="view-ticket" class="top-button submit btn ticket-button">View Ticket</button>
         </div>
         <script type="text/javascript">
             $("#view-all-button").click(function() {
@@ -96,10 +97,12 @@
                 <label for="name">Name</label>
                 <input type="text" style="font-size:0.75em;" name="name" id="name" class="form-control" value="{{ ticket.name }}"/><br>
                 <label for="desc">Description</label> <br><br>
-                <textarea name="desc" id="desc" style="width:100%;font-size:0.8em;">{{ ticket.desc }}</textarea>
+                <textarea name="desc" id="desc" style="font-size:0.8em;">{{ ticket.desc }}</textarea>
                 <br />
                 <input style="font-size:0.8em;" type="submit" class="btn btn-primary btn-lg" value="Update" />
             </div>
         </form>
-    </div>    
+    </div>
+</div>
+
 {% endblock %}

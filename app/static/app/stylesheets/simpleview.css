@@ -32,8 +32,9 @@
     color:black;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    width: 100vw;
+    overflow: scroll;
 }
 .hidden{
     display:none;
@@ -56,9 +57,10 @@
     display:flex;
     flex-direction: row;
     justify-content: space-between;
+    padding: 10px;
 }
 .delete-comment-view > a{
-    color:black;
+    color:red;
 }
 .add-comment-view{
     padding-bottom:1em;
@@ -66,7 +68,6 @@
 }
 .form-update{
     font-size:2em;
-    color:black;
 }
 #create-ticket-button > a {
     background-color: #039be5;
@@ -148,14 +149,13 @@ textarea,input {
 }
 .ticket-created-view {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
 }
 #info-container {
     background-color: rgba(255,255,255,0.8);
     padding: 30px;
     border-radius: 3px;
-    width: 40vw;
+    width: 80vw;
 }
 label {
     color: black;
@@ -166,9 +166,11 @@ label {
     font-size: 1em !important;
 }
 #description-content-view {
-    text-align: center;
-    padding: 5px;
-
+	text-align: center;
+	padding: 15px;
+	border: 1px solid;
+	text-align: left;
+    margin: 10px;
 }
 #table-con {
     width: 100vw;
@@ -176,5 +178,19 @@ label {
     justify-content: center;
     align-items: center;
     margin-top: 40px;
+    border-radius: 3px;
+}
+.comment-text {
+    max-width: 40vw;
+}
+#create-ticket-div-update {
+    display: flex;
+    flex-direction: column;
+}
+#up-wrapper {
+	display: flex;
+	flex-direction: column;
+	background-color: rgba(255,255,255,0.8);
+    width: 80vw;
     border-radius: 3px;
 }

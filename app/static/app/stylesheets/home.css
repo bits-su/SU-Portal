@@ -98,6 +98,8 @@ Main components
     z-index: 0;
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 #main-wrapper {
     max-height: 100vh;
@@ -163,7 +165,7 @@ Main components
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
 @media only screen and (min-width: 768px) {
     .cd-header {
@@ -186,20 +188,16 @@ Main components
 .no-js .cd-blurred-bg {
     display: none;
 }
-
-#cd-logo {
-    position: absolute;
-    left: 10px;
-    top: 8px;
-    width: 100px;
-    height: 32px;
-}
 #cd-logo img {
     display: block;
+    margin: 5px;
 }
 #title {
     font-size: 1.2em;
     color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 @media only screen and (min-width: 768px) {
     #cd-logo {
@@ -219,8 +217,7 @@ Main components
 
 .cd-menu-trigger {
     display: inline-block;
-    position: absolute;
-    right: 0;
+    left: 0;
     top: 0;
     height: 50px;
     line-height: 50px;
@@ -345,7 +342,7 @@ Main components
 #main-nav .cd-close-menu {
     position: absolute;
     top: 0;
-    right: 0;
+    left: 0;
     display: inline-block;
     width: 40px;
     height: 40px;
@@ -458,18 +455,13 @@ li.multi > a {
     z-index: -1;
 }
 #login {
-	position: fixed;
-	color: white;
-	bottom: 5%;
-	right: 2.5%;
 	text-align: center;
 	font-size: 18px;
 	font-size: 1.125rem;
 	color: #ffffff;
 	z-index: 2;
-	background-color: rgba(58, 57, 63, 0.6);
 	border-radius: 3px;
-	padding: 7.5px 10px;
+    margin: 30px;
 }
 .complaints-block {
     border-radius:20px;

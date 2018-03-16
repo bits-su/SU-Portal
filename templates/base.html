@@ -25,25 +25,28 @@
                 <div id="blur-it-all">
                 </div>
                 <header class="cd-header">
-                    <div id="cd-logo"><a href="/"><img src="{% static "app/logo.png" %}" alt="Logo" style="height:40px;"></a></div>
+                    <a class="cd-menu-trigger" href="#main-nav">Menu<span></span></a>
+                    <!-- <div id="cd-logo"><a href="/"><img src="{% static "app/logo.png" %}" alt="Logo" style="height:40px;"></a></div> -->
                     <div id="title">
+                        <div id="cd-logo"><a href="/"><img src="{% static "app/logo.png" %}" alt="Logo" style="height:40px;"></a></div>
                         <a href="/">SU Portal</a>
                     </div>
-                    <a class="cd-menu-trigger" href="#main-nav">Menu<span></span></a>
+
+                    <div id="login">
+                        {% if request.user.username %}
+                        <p> Welcome {{request.user.first_name}}</p>
+                        <a href="/logout">Logout</a>
+                        {% else %}
+                        <a href="/login">Login</a>
+                        {% endif %}
+                    </div>
                 </header>
                 <div class="cd-blurred-bg"></div>
             </section>
         </main>
 
     <div class="cd-shadow-layer"></div>
-    <div id="login">
-        {% if request.user.username %}
-        <p> Welcome {{request.user.first_name}}</p>
-        <a href="/logout">Logout</a>
-        {% else %}
-        <a href="/login">Login</a>
-        {% endif %}
-    </div>
+
     <div id="main-nav">
         <ul>
             <li><a href="/aboutus"><span>About Us</span></a></li>
