@@ -618,3 +618,14 @@ input {
 #login-form {
     max-width: 80vw;
 }
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.loading {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100vw;
+	height: 100vh;
+	z-index: 9999;
+	background: url('../loader.gif') center no-repeat #fff;
+}

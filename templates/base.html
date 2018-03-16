@@ -16,6 +16,7 @@
     {% endblock %}
 </head>
 <body>
+    <div class="loading"></div>
     <div id="main-wrapper">
         <main id="cd-main-content">
             <section id="cd-intro">
@@ -51,13 +52,13 @@
                 <a href="/contact"><span>Contact SUC</span></a>
             </li>
             <li class="multi">
-                <a href=""><span>Technical Clubs Senate</span></a>
+                <a href="/aboutus/techassoc"><span>Technical Clubs Senate</span></a>
                 <a href=""><span>Sports Clubs Senate</span></a>
+                <a href="/aboutus/depts"><span>Departments</span></a>
             </li>
             <li class="multi">
-                <a href=""><span>NGOs</span></a>
-                <a href=""><span>Others</span></a>
-                <a href=""><span>Cultural Clubs Senate</span></a>
+                <a href="/aboutus/ngos"><span>NGOs and Other Clubs</span></a>
+                <a href="/aboutus/clubs"><span>Cultural Clubs Senate</span></a>
             </li>
             <li class="multi">
                 <a href=""><span>212 Tracker (Coming Soon)</span></a>
@@ -66,6 +67,10 @@
         </ul>
         <a href="#" class="cd-close-menu">Close<span></span></a>
     </div>
-
+    <script>
+    $(window).load(function() {
+		$(".loading").fadeOut("slow");;
+	});
+    </script>
 </body>
 </html>
