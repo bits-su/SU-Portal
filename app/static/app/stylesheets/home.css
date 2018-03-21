@@ -311,6 +311,15 @@ Main components
 #main-nav li {
     height: 20%;
 }
+
+#main-nav li a.high {
+    background-color: #46e79c;
+}
+
+#main-nav li a.low {
+    background-color: indianred;
+}
+
 #main-nav li a {
     position: relative;
     display: block;
