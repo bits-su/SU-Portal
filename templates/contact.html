@@ -8,143 +8,231 @@
 	{% endblock %}
 
 {% block content %}
-{% comment %}
-{% if members %}
+
 <div id="c-con">
-    <div id="cards">
-		{% for member in members%}
-        <div class="carde">
-            <div class="content">
-                <img src="{{ member.image.url }}">
-                <p class="name">{{member.first_name}} {{member.last_name}}</p>
+	<div id="cards">
+
+		{# PRESIDENT #}
+		<div class="carde">
+			<div class="content">
+				<img src="{% static "/app/pearl.jpg" %}">
+				<p class="position">PRESIDENT</p>
+				<p class="name">Abhinav Ettireddy</p>
 				<div class="social">
 					<p><i class="fas fa-phone"></i></p>
-					<p class="contact-no">{{member.phone}}</p>
+					<p class="contact-no">9542929354</p>
+				</div>
+			</div>
+		</div>
+
+		{# GENSEC #}
+		<div class="carde">
+			<div class="content">
+				<img src="{% static "/app/pearl.jpg" %}">
+				<p class="position">GENERAL SECRETARY</p>
+				<p class="name">Aditya Iyer</p>
+				<div class="social">
+					<p><i class="fas fa-phone"></i></p>
+					<p class="contact-no">9705932532</p>
+				</div>
+			</div>
+		</div>
+
+		{# CULTSEC (BOYS) #}
+		<div class="carde">
+			<div class="content">
+				<img src="{% static "/app/pearl.jpg" %}">
+				<p class="position">CULTURAL SECRETARY (BOYS)</p>
+				<p class="name">Chandan Kumar</p>
+				<div class="social">
+					<p><i class="fas fa-phone"></i></p>
+					<p class="contact-no">7660002320</p>
+				</div>
+			</div>
+		</div>
+
+		{# CULTSEC (GIRLS) #}
+		<div class="carde">
+			<div class="content">
+				<img src="{% static "/app/pearl.jpg" %}">
+				<p class="position">CULTURAL SECRETARY (GIRLS)</p>
+				<p class="name">K Vaishnavi Reddy</p>
+				<div class="social">
+					<p><i class="fas fa-phone"></i></p>
+					<p class="contact-no">9885623355</p>
+				</div>
+			</div>
+		</div>
+
+		{# SPORTS SEC (BOYS) #}
+		<div class="carde">
+			<div class="content">
+				<img src="{% static "/app/pearl.jpg" %}">
+				<p class="position">SPORTS SECRETARY (BOYS)</p>
+				<p class="name">Kritanshu Singh</p>
+				<div class="social">
+					<p><i class="fas fa-phone"></i></p>
+					<p class="contact-no">7661837358<br>
+					7587785794</p>
+				</div>
+			</div>
+		</div>
+
+		{# SPORTS SEC (GIRLS) #}
+		<div class="carde">
+			<div class="content">
+				<img src="{% static "/app/pearl.jpg" %}">
+				<p class="position">SPORTS SECRETARY (GIRLS)</p>
+				<p class="name">Aastha Singh</p>
+				<div class="social">
+					<p><i class="fas fa-phone"></i></p>
+					<p class="contact-no">9133235010</p>
+				</div>
+			</div>
+		</div>
+
+		{# TECHNICAL CONVENOR #}
+		<div class="carde">
+			<div class="content">
+				<img src="{% static "/app/pearl.jpg" %}">
+				<p class="position">TECHNICAL SECRETARY</p>
+				<p class="name">Sharath Golluri</p>
+				<div class="social">
+					<p><i class="fas fa-phone"></i></p>
+					<p class="contact-no">9133235010</p>
+				</div>
+			</div>
+		</div>
+
+		{# HREPS #}
+
+		<div class="carde">
+			<div class="content">
+				<img src="{% static "/app/pearl.jpg" %}">
+				<p class="position">HOSTEL REPRESENTATIVE (Meera Bhavan)</p>
+				<p class="name">Jahnavi Swamy</p>
+				<div class="social">
+					<p><i class="fas fa-phone"></i></p>
+					<p class="contact-no">8978399148</p>
 				</div>
             </div>
+		</div>	
 
-        </div>
-		{% endfor %}
+		<div class="carde">
+			<div class="content">
+				<img src="{% static "/app/pearl.jpg" %}">
+				<p class="position">HOSTEL REPRESENTATIVE (Malaviya Bhavan)</p>
+				<p class="name">Vaishnavi Reddy S</p>
+				<div class="social">
+					<p><i class="fas fa-phone"></i></p>
+					<p class="contact-no">8523002010</p>
+				</div>
+			</div>
+		</div>
 
-	{% else %}
-		<strong>There are no contacts in the list</strong>
-	{% endif %}
-    </div>
+		<div class="carde">
+			<div class="content">
+				<img src="{% static "/app/pearl.jpg" %}">
+				<p class="position">HOSTEL REPRESENTATIVE (Gautam Bhavan)</p>
+				<p class="name">Pranjal Shukla</p>
+				<div class="social">
+					<p><i class="fas fa-phone"></i></p>
+					<p class="contact-no">9313220291</p>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="carde">
+			<div class="content">
+				<img src="{% static "/app/pearl.jpg" %}">
+				<p class="position">HOSTEL REPRESENTATIVE (Valmiki Bhavan)</p>
+				<p class="name">Siddharth Ratnam</p>
+				<div class="social">
+					<p><i class="fas fa-phone"></i></p>
+					<p class="contact-no">7981580002</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="carde">
+			<div class="content">
+				<img src="{% static "/app/pearl.jpg" %}">
+				<p class="position">HOSTEL REPRESENTATIVE (Krishna Bhavan)</p>
+				<p class="name">Bandari Shiva Sai Krishna</p>
+				<div class="social">
+					<p><i class="fas fa-phone"></i></p>
+					<p class="contact-no">7729946232</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="carde">
+			<div class="content">
+				<img src="{% static "/app/pearl.jpg" %}">
+				<p class="position">HOSTEL REPRESENTATIVE (Ram Bhavan)</p>
+				<p class="name">KNS Bharath</p>
+				<div class="social">
+					<p><i class="fas fa-phone"></i></p>
+					<p class="contact-no">7997083699</p>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="carde">
+			<div class="content">
+				<img src="{% static "/app/pearl.jpg" %}">
+				<p class="position">HOSTEL REPRESENTATIVE (Shankar Bhavan)</p>
+				<p class="name">Rahul Sai Kolli</p>
+				<div class="social">
+					<p><i class="fas fa-phone"></i></p>
+					<p class="contact-no">9505799523</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="carde">
+			<div class="content">
+				<img src="{% static "/app/pearl.jpg" %}">
+				<p class="position">HOSTEL REPRESENTATIVE (Vyas Bhavan)</p>
+				<p class="name">Suhas Reddy Vajrala</p>
+				<div class="social">
+					<p><i class="fas fa-phone"></i></p>
+					<p class="contact-no">9948322244</p>
+				</div>
+			</div>
+		</div>
+
+
+		{% comment %}
+		<div class="carde">
+			<div class="content">
+				<img src="{% static "/app/pearl.jpg" %}">
+				<p class="position">HOSTEL REPRESENTATIVE (Gandhi Bhavan)</p>
+				<p class="name">INCOMPLETE DATA</p>
+				<div class="social">
+					<p><i class="fas fa-phone"></i></p>
+					<p class="contact-no">INCOMPLETE DATA</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="carde">
+			<div class="content">
+				<img src="{% static "/app/pearl.jpg" %}">
+				<p class="position">HOSTEL REPRESENTATIVE (Vyas Bhavan)</p>
+				<p class="name">INCOMPLETE DATA</p>
+				<div class="social">
+					<p><i class="fas fa-phone"></i></p>
+					<p class="contact-no">INCOMPLETE DATA</p>
+				</div>
+			</div>
+		</div>
+		{% endcomment %}
+
+
+	</div>
 </div>
-{% endcomment %}
 
-
-	<div class="column">
-        <div class="contacts" style="padding-top: 90px; padding-left: 50px;">
-            <div class="title">President</div>
-            <div class="item">
-                <div class="icon icon-location"></div>
-                Abhinav Ettireddy<br><br>
-            </div>
-            <div class="item">
-                <div class="icon icon-phone"></div>
-                9542929354
-            </div>
-            <div class="item">
-                <div class="icon icon-email"></div>
-                f20150511@hyderabad.bits-pilani.ac.in
-            </div>
-        </div>
-         <div class="contacts" style="padding-left: 50px;">
-            <div class="title">General Secretary</div>
-            <div class="item">
-                <div class="icon icon-location"></div>
-               Aditya Iyer<br><br>
-            </div>
-            <div class="item">
-                <div class="icon icon-phone"></div>
-                9705932532
-            </div>
-            <div class="item">
-                <div class="icon icon-email"></div>
-                f20150204@hyderabad.bits-pilani.ac.in
-            </div>
-        </div>
-         <div class="contacts" style="padding-left: 50px;">
-            <div class="title">Cultural Secretary (boys) </div>
-            <div class="item">
-                <div class="icon icon-location"></div>
-               Chandan Kumar<br><br>
-            </div>
-            <div class="item">
-                <div class="icon icon-phone"></div>
-                 7660002320
-            </div>
-            <div class="item">
-                <div class="icon icon-email"></div>
-                f20150503@hyderabad.bits-pilani.ac.in
-            </div>
-        </div>
-    </div>
-    <div class="column">
-         <div class="contacts" style="padding-top: 90px; ">
-            <div class="title">Cultural Secretary (girls) </div>
-            <div class="item">
-                <div class="icon icon-location"></div>
-               K Vaishnavi Reddy<br><br>
-            </div>
-            <div class="item">
-                <div class="icon icon-phone"></div>
-                 9885623355
-            </div>
-            <div class="item">
-                <div class="icon icon-email"></div>
-				f20150434@hyderabad.bits-pilani.ac.in
-            </div>
-        </div>
-         <div class="contacts">
-            <div class="title">Sports Secretary (boys)</div>
-            <div class="item">
-                <div class="icon icon-location"></div>
-               Kritanshu Singh<br><br>
-            </div>
-            <div class="item">
-                <div class="icon icon-phone"></div>
-                 7661837358<br>
-                 7587785794
-            </div>
-            <div class="item">
-                <div class="icon icon-email"></div>
-				sportssec@hyderabad.bits-pilani.ac.in
-            </div>
-        </div>
-        <div class="contacts" >
-            <div class="title">Sports Secretary (girls) </div>
-            <div class="item">
-                <div class="icon icon-location"></div>
-               Aastha Singh<br><br>
-            </div>
-            <div class="item">
-                <div class="icon icon-phone"></div>
-                 9133235010
-            </div>
-            <div class="item">
-                <div class="icon icon-email"></div>
-				f20150758@hyderabad.bits-pilani.ac.in
-            </div>
-        </div>
-    </div>
-    <div class="column">
-        <div class="contacts" style="padding-top: 90px;">
-            <div class="title">Technical Secretary </div>
-            <div class="item">
-                <div class="icon icon-location"></div>
-               Sharath Golluri<br><br>
-                </div>
-            <div class="item">
-                <div class="icon icon-phone"></div>
-                9133235010
-            </div>
-            <div class="item">
-                <div class="icon icon-email"></div>
-				f20150758@hyderabad.bits-pilani.ac.in
-            </div>
-        </div>
-    </div>
-
- {% endblock %}
+{% endblock %}
