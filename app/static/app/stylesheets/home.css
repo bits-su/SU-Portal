@@ -337,7 +337,7 @@ Main components
 }
 @media only screen and (min-width: 768px) {
     #main-nav li a {
-        height: 9vh;
+        height: 7.6vh;
     }
     #main-nav li {
         height: unset;
@@ -450,6 +450,14 @@ li.multi > a {
     li.multi {
         flex-direction: column;
         flex-wrap: nowrap;
+    }
+    /*Shouldn't be here but for some reason, it wasn't working in another
+    media query up above. So here it is. :)*/
+    #main-nav li a {
+        height: 7.6vh;
+    }
+    #main-nav li {
+        height: unset;
     }
 }
 .cd-shadow-layer {
