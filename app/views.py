@@ -91,6 +91,9 @@ def ngos(request):
 def suevents(request):
     return render(request, 'suevents.html')
 
+def alumni(request):
+    return render(request, 'alumni.html')
+
 def logout_view(request):
     logout(request)
     return home(request)

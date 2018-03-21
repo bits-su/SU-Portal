@@ -19,6 +19,7 @@ urlpatterns = [
     path('logout/', views.logout_view, name='logout'),
     path('contact/', views.contact, name="contact-us"),
     path('resources/', views.resources, name="resources-us"),
+    path('alumni/', views.alumni, name="alumni-connect"),
     path('static/pdf/<str:filename>/', views.pdf_atmos, name = 'pdf_atmos'),
     path('static/pdf/<str:filename>/', views.pdf_pearl, name = 'pdf_pearl'),
     path('static/pdf/<str:filename>/', views.pdf_arena, name = 'pdf_arena'),
