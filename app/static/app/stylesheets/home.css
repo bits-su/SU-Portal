@@ -168,12 +168,11 @@ Main components
     align-items: center;
     justify-content: space-between;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (max-width: 768px) {
     .cd-header {
-        height: 55px;
+        font-size: 0.75em;
     }
 }
-
 .cd-blurred-bg {
     /* we use jQuery to apply a mask to this element - CSS clip property */
     position: absolute;
@@ -242,6 +241,11 @@ Main components
     -ms-transform: translateY(-2px);
     -o-transform: translateY(-2px);
     transform: translateY(-2px);
+}
+@media only screen and (max-width: 768px) {
+    .cd-menu-trigger span {
+        display: none;
+    }
 }
 .cd-menu-trigger span::before, .cd-menu-trigger span::after {
     content: '';
@@ -330,6 +334,14 @@ Main components
     font-size: 20px;
     font-size: 1.25rem;
     font-weight: bold;
+}
+@media only screen and (min-width: 768px) {
+    #main-nav li a {
+        height: 9vh;
+    }
+    #main-nav li {
+        height: unset;
+    }
 }
 #main-nav li a span {
     position: absolute;
@@ -433,6 +445,12 @@ li.multi {
 }
 li.multi > a {
     flex-grow: 1;
+}
+@media only screen and (max-width: 768px) {
+    li.multi {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
 }
 .cd-shadow-layer {
     position: fixed;
@@ -620,6 +638,11 @@ input {
     font-size: 1.2em;
     font-weight: lighter;
     max-width: 80vw;
+}
+@media only screen and (max-width: 768px) {
+    .landing-div > p {
+        max-width: 100vw;
+    }
 }
 #login-form {
     max-width: 80vw;

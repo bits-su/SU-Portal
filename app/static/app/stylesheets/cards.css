@@ -22,7 +22,7 @@
     min-height: 25.6vw;
     margin: 1px;
     width: 25.6vw;
-    min-height: 25.6vw;
+    min-height: 25.6vh;
 }
 .content {
     display: flex;
