@@ -3,6 +3,7 @@
 Primary style
 
 -------------------------------- */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600');
 * {
     margin: 0;
     padding: 0;
@@ -25,7 +26,7 @@ html, body {
 
 body {
     font-size: 100%;
-    font-family: "Ubuntu", sans-serif;
+    font-family: 'Montserrat', sans-serif;
     background-color: #2e2d32;
     overflow: hidden;
 }
@@ -119,7 +120,7 @@ Main components
     transform: translateX(-50%) translateY(-50%);
     text-align: center;
     font-size: 18px;
-    font-size: 1.125rem;
+    font-size: 1.5rem;
     font-weight: bold;
     color: #ffffff;
 }
@@ -137,7 +138,7 @@ Main components
     transform: translateX(-50%) translateY(-50%);
     text-align: center;
     font-size: 18px;
-    font-size: 1.125rem;
+    font-size: 1.35rem;
     font-weight: bold;
     color: #ffffff;
 }
@@ -156,9 +157,9 @@ Main components
     top: 0;
     left: 0;
     width: 100%;
-    height: 50px;
+    height: 55px;
     z-index: 2;
-    background: rgba(58, 57, 63, 0.6);
+    background: rgba(0, 0, 0, 0.5);
     -webkit-transition: background 0.2s;
     -moz-transition: background 0.2s;
     transition: background 0.2s;
@@ -169,7 +170,7 @@ Main components
 }
 @media only screen and (min-width: 768px) {
     .cd-header {
-        height: 80px;
+        height: 55px;
     }
 }
 
@@ -235,7 +236,7 @@ Main components
     height: 2px;
     background-color: #ffffff;
     vertical-align: middle;
-    margin-left: 10px;
+    margin-right: 10px;
     -webkit-transform: translateY(-2px);
     -moz-transform: translateY(-2px);
     -ms-transform: translateY(-2px);
@@ -451,17 +452,21 @@ li.multi > a {
     left: 0;
     height: 100vh;
     width: 100vw;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.7);
     z-index: -1;
 }
 #login {
-	text-align: center;
+	text-align: left;
 	font-size: 18px;
 	font-size: 1.125rem;
 	color: #ffffff;
 	z-index: 2;
 	border-radius: 3px;
     margin: 30px;
+}
+#login:hover {
+    text-decoration: underline;
+    transition: 0.5s ease;
 }
 .complaints-block {
     border-radius:20px;
@@ -476,7 +481,7 @@ li.multi > a {
 }
 
 .table {
-    text-align:center;
+    text-align:left;
     text-color:black;
     padding: 25px;
     width:1600px;
@@ -514,7 +519,7 @@ th {
     font-size: 14px;
     font-weight: bold;
     padding: 10px;
-    display: inline-flex;
+    display: inline-flex;#intro
 }
 #phew {
     display: flex;
@@ -586,6 +591,7 @@ input {
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    text-align: left;
 }
 #intro {
     height: 100vh;
@@ -594,14 +600,14 @@ input {
     text-transform: uppercase;
     color: white;
     letter-spacing: 3px;
-    text-align: center;
+    text-align: left;
     font-size: 1.5em;
 }
 .landing-div > p {
     color: white;
     padding: 45px;
     line-height: 1.1em;
-    text-align: center;
+    text-align: left;
     font-size: 1.2em;
     font-weight: lighter;
     max-width: 80vw;
@@ -619,4 +625,10 @@ input {
 	height: 100vh;
 	z-index: 9999;
 	background: url('../loader.gif') center no-repeat #fff;
+}
+.moreclass {
+    padding: 2px;
+}
+.less {
+    padding: 2px;
 }
