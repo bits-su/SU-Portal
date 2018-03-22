@@ -4,14 +4,18 @@
 {% block title %}
 <title>Resources</title>
 {% load static %}
+<link rel="stylesheet" href="{% static "app/stylesheets/resources.css" %}">
 {% endblock %}
 
 {% block content %}
-<div style="margin-top: 100px;">
-	 <a href="{%static "pdf/pearl.pdf" %}" target="_blank">Pearl Charter</a><br><br>
-	 <a href="{%static "pdf/arena.pdf" %}" target="_blank">Arena Charter</a><br><br>
-   	 <a href="{%static "pdf/atmos.pdf" %}" target="_blank">Atmos Charter</a><br><br>
-   	 <a href="{%static "pdf/vm.pdf" %}" target="_blank">Verba Maximus Charter</a><br><br>
-   	 <a href="{%static "pdf/su.pdf" %}" target="_blank">Students' Union Constitution</a><br><br>
-</div><br>
+<div class="char">
+<h3>Charters and Contstitution</h3>
+<div class="resource">
+	<div><a href="{%static "pdf/pearl.pdf" %}" target="_blank"><div id="pearl"><p>Pearl Charter</p></div></a></div>
+	<div><a href="{%static "pdf/arena.pdf" %}" target="_blank"><div id="arena"><p>Arena Charter</p></div></a></div>
+   	<div><a href="{%static "pdf/atmos.pdf" %}" target="_blank"><div id="atmos"><p>Atmos Charter</p></div></a></div>
+   	<div><a href="{%static "pdf/vm.pdf" %}" target="_blank"><div id="vm"><p>Verba Maximus<br>Charter</p></div></a></div>
+   	<div><a href="{%static "pdf/su.pdf" %}" target="_blank"><div id="su"><p>Students' Union<br>Constitution</p></div></a></div>
+</div>
+</div>
 {% endblock %}

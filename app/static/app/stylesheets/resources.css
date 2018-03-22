@@ -1,0 +1,163 @@
+*{
+    margin:0;
+    padding:0;
+}
+.char{
+    background-color:white;
+    opacity:0.8;
+    border-radius:5px;
+    margin:5%;
+    margin-top:3%;
+}
+h3{
+    text-align:center;
+    font-size:2em;
+    padding:1em;
+}
+.resource{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: center;
+    margin:5%;
+}
+#pearl{
+    padding:5em;
+    margin:1em;
+    border-radius:5px;
+    background: url("/static/app/pearl.jpg") no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    transition:0.5s ease-in;
+}
+#pearl > p{
+    visibility:hidden;
+    font-size:1.5em;
+}
+#pearl:hover{
+    background:none;
+    background-color:gray;
+    opacity:0.9;
+    transition:0.5s ease-in;
+}
+#pearl:hover >p{
+    visibility:visible ;
+    font-size:1.5em;
+    font-weight:bold;
+}
+
+#arena{
+    padding:5em;
+    margin:1em;
+    border-radius:5px;
+    background: url("/static/app/arena.jpg") no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    transition:0.5s ease-in;
+}
+#arena > p{
+    visibility:hidden;
+    font-size:1.5em;
+}
+#arena:hover{
+    background:none;
+    background-color:gray;
+    opacity:0.9;
+    transition:0.5s ease-in;
+}
+#arena:hover >p{
+    visibility:visible ;
+    font-size:1.5em;
+    font-weight:bold;
+}
+
+#atmos{
+    padding:5em;
+    margin:1em;
+    border-radius:5px;
+    background: url("/static/app/atmos.jpg") no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    transition:0.5s ease-in;
+}
+#atmos > p{
+    visibility:hidden;
+    font-size:1.5em;
+}
+#atmos:hover{
+    background:none;
+    background-color:gray;
+    opacity:0.9;
+    transition:0.5s ease-in;
+}
+#atmos:hover >p{
+    visibility:visible ;
+    font-size:1.5em;
+    font-weight:bold;
+}
+
+#vm{
+    padding:4em;
+    margin:1em;
+    border-radius:5px;
+    background: url("/static/app/vm.jpg") no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    transition:0.5s ease-in;
+}
+#vm > p{
+    visibility:hidden;
+    font-size:1.5em;
+}
+#vm:hover{
+    background:none;
+    background-color:gray;
+    opacity:0.9;
+    transition:0.5s ease-in;
+}
+#vm:hover >p{
+    visibility:visible ;
+    font-size:1.5em;
+    font-weight:bold;
+}
+
+#su{
+    padding:4em;
+    margin:1em;
+    border-radius:5px;
+    background: url("/static/app/logo.png") no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    transition:0.5s ease-in;
+}
+#su > p{
+    visibility:hidden;
+    font-size:1.5em;
+}
+#su:hover{
+    background:none;
+    background-color:gray;
+    opacity:0.9;
+    transition:0.5s ease-in;
+}
+#su:hover >p{
+    visibility:visible ;
+    font-size:1.5em;
+    font-weight:bold;
+}
+
+@media only screen and (max-width: 600px) {
+    .char {
+        font-size: 0.5em;
+        margin-top:82.5%;
+    }
+    .resource{
+        padding:1px;
+        margin:1%;
+    }
+    h3{
+        margin:0;
+        padding-top:2em;
+    }
+}
