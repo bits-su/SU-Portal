@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% block head %}
-<title>Complaints</title>
+{% block title %}
+<title>Complaints - Students' Union Portal</title>
+{% endblock %}
 <script type="text/javascript">
 $(document).ready(function() {
     $("#topnav-tickets").addClass("active");
@@ -33,9 +35,10 @@ $(document).ready(function() {
     </div>
     {% endif %}
     {% endcomment %}
+    <br>
     <div id="create-ticket-div">
         <!-- <button id="project-view-button" class="btn ticket-button">Project View</button> -->
-        <div id="view-all-button" class="btn ticket-button" {% if filter == 'All' %}disabled="disabled"{% endif %}>View all complaints</div>
+        {# <div id="view-all-button" class="btn ticket-button" {% if filter == 'All' %}disabled="disabled"{% endif %}>View all complaints</div> #}
         <div id="create-ticket-button" class="btn btn-success ticket-button"><a style="color:white;" href="/tickets/new/">Add a complaint</a></div>
         <script type="text/javascript">
         $("#view-all-button").click(function() {

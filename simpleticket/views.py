@@ -135,7 +135,7 @@ def view_all(request):
 
     # Handle the case of no visible tickets
     if tickets.count() < 1:
-        filter_message = "No complaints meet the current filtering critera."
+        filter_message = "No complaints"
 
     # Generate the base URL for showing closed tickets & sorting
     get_dict = request.GET.copy()
