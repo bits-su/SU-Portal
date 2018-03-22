@@ -6,19 +6,20 @@
 {% endblock %}
 
 {% block content %}
+<div>
     <div class="tab">
       <button class="tablinks" onclick="openCity(event, 'calendar')" id="defaultOpen">Calendar</button>
       <button class="tablinks" onclick="openCity(event, 'Events')">Events</button>
     </div>
 
     <div id="calendar" class="tabcontent">
-      <p><iframe margin-top="100px" width="100%" height="450px" src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=suc%40hyderabad.bits-pilani.ac.in&amp;color=%231B887A&amp;ctz=Asia%2FCalcutta" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe></p>
+      <p><iframe width="1500px" height="750px" src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=suc%40hyderabad.bits-pilani.ac.in&amp;color=%231B887A&amp;ctz=Asia%2FCalcutta" style="border-width:0" frameborder="0" scrolling="no"></iframe></p>
     </div>
 
     <div id="Events" class="tabcontent">
-     <p><iframe height="450px" src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=800&amp;wkst=1&amp;bgcolor=%23818996&amp;src=suc%40hyderabad.bits-pilani.ac.in&amp;color=%23B1440E&amp;ctz=Asia%2FCalcutta" style="border-width:0" width="100%" height="600" frameborder="0" scrolling="no"></iframe></p> 
+     <p><iframe height="750px" width="1500px" src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=800&amp;wkst=1&amp;bgcolor=%23818996&amp;src=suc%40hyderabad.bits-pilani.ac.in&amp;color=%23B1440E&amp;ctz=Asia%2FCalcutta" style="border-width:0" frameborder="0" scrolling="no"></iframe></p> 
     </div>
-
+</div>
     <script>
         function openCity(evt, tabName) {
             var i, tabcontent, tablinks;
