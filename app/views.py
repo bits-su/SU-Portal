@@ -101,6 +101,9 @@ def logout_view(request):
 def resources(request):
     return render(request, 'resources.html')
 
+def transport(request):
+    return render(request, 'transport.html')
+
 def pdf_atmos(request, filename):
     path = os.path.abspath('/static/pdf/')
     f = open(path+filename, "rb")

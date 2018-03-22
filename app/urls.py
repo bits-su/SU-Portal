@@ -18,6 +18,7 @@ urlpatterns = [
     path('aboutus/suevents/', views.suevents, name='suevents'),
     path('logout/', views.logout_view, name='logout'),
     path('contact/', views.contact, name="contact-us"),
+    path('transport/', views.transport, name="transport"),
     path('resources/', views.resources, name="resources-us"),
     path('alumni/', views.alumni, name="alumni-connect"),
     path('static/pdf/<str:filename>/', views.pdf_atmos, name = 'pdf_atmos'),

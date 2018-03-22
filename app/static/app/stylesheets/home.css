@@ -87,7 +87,7 @@ Main components
 .no-js #cd-main-content {
     height: auto;
     overflow-x: auto;
-    overflow-y: auto;
+    overflow-y: auto;s
 }
 
 #cd-intro {
@@ -98,9 +98,9 @@ Main components
     background-attachment: fixed;
     z-index: 0;
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    align-items: center;
+    justify-content: center;
+    align-items:center;
 }
 #main-wrapper {
     max-height: 100vh;

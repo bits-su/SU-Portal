@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title %}
+    <title>Home - Students' Union Portal</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static "app/stylesheets/transport.css" %}">
+{% endblock %}
+
+{% block content %}
+<div class="wrapper">
+    <h4 >212 Bus timings</h4><br>
+    <div class="info">
+        <div class="cols" id= "from">
+            <h3>Secunderabad to Bits Main Gate</h3>
+            <p>
+                07:50</br> 08:20</br> 08:50</br> 09:50</br> 11:00</br> 12:00</br> 13:00</br> 14:10</br> 15:05</br> 16:05</br> 17:20</br> 18:15</br> 19:15</br> 20:15</br> 21:15
+            </p>
+        </div>
+        <div class="cols" id="to">
+            <h3>Bits Main Gate to Secunderabad</h3>
+            <p>
+                06:55</br> 07:55</br> 08:50</br> 09:20</br> 09:50</br> 11:00</br> 12:00</br> 13:00</br> 14:00</br> 15:05</br> 16:05</br> 17:20</br> 18:15</br> 19:15</br> 20:15
+            </p>
+        </div>
+    </div>
+    <br><br><br>
+    <h4 >Auto rickshaw Contact Details</h4><br>
+    <div class="info">
+        <div class="cols" id= "from">
+            <h3>Name of the driver</h3>
+            <p>
+                Balesh<br></br>Bishapathi<br></br>Raju<br></br>Ramesh<br></br>Sathya<br></br>Sudhakar<br></br>Yadagiri
+            </p>
+        </div>
+        <div class="cols" id="to">
+            <h3>Phone Number</h3>
+            <p>
+                9866472092</br><br>9000092037<br></br>9553375890<br></br>8096432095<br></br>9542876740<br></br>9912718565<br></br>9989396607
+            </p>
+        </div>
+    </div>
+</div>    
+{% endblock %}
