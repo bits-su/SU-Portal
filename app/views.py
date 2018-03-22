@@ -41,35 +41,6 @@ def contact(request):
 	context_dict = {'members': contact_list}
 	return render(request, 'contact.html', context_dict, context)
 
-def complaints(request):
-
-    complaints_form = ComplaintForm()
-    context = {
-        'form' : complaints_form,
-    }
-    return render(request,'complaints-express.html',context)
-
-@login_required
-def submit_complaint(request):
-
-    if request.user.is_authenticated:
-        user = User.objects.get(id=request.session['_auth_user_id'])
-
-        form = ComplaintForm(request.POST)
-        if form.is_valid:
-            title = form["title"].value()
-            complaint_text = form["complaint"].value()
-
-        complaint = Complaint.objects.create(
-                        title=title,
-                        complaint=complaint_text,
-                        uploadedby=user,
-                        )
-
-        return HttpResponse("Submitted")
-    else:
-        return HttpResponse("login plis")
-
 def calendar(request):
     return render(request, 'calendar.html')
 
