@@ -31,9 +31,9 @@
         </div>
         <form id="login-form" method="post">
             {% csrf_token %}
-            {{ form.as_p }}
-            <input type="submit" value="Login">
-            <p id="hi">- or -</p>
+            {# {{ form.as_p }} #}
+            {# <input type="submit" value="Login"> #}
+            {# <p id="hi">- or -</p> #}
             <a href="{% url 'social:begin' 'google-oauth2' %}"><h3>Login with Google</h3></a>
         </form>
     </div>
