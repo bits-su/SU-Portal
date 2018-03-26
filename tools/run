@@ -4,4 +4,4 @@ BASEDIR=`dirname $0`/..
 
 source $BASEDIR/env/bin/activate
 export PYTHONPATH=$BASEDIR/env/dep
-python manage.py runserver 0.0.0.0:4020 2>&1
+python manage.py runserver 0.0.0.0:4020 2>&1 --insecure
