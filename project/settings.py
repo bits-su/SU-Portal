@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'ds8_nk90fi0e5*btrwuf(phh7#$v7+l_x@8z#kh@-x^+kbw3-f'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
+DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', 'su.bits-hyd.org','127.0.0.1']
 AUTH_USER_MODEL = 'app.User'

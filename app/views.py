@@ -59,6 +59,9 @@ def techassoc(request):
 def ngos(request):
     return render(request, 'ngos.html')
 
+def reg(request):
+    return render(request, 'reg.html')
+
 def suevents(request):
     return render(request, 'suevents.html')
 
