@@ -78,42 +78,12 @@ def resources(request):
 def transport(request):
     return render(request, 'transport.html')
 
-def pdf_atmos(request, filename):
-    path = os.path.abspath('/static/pdf/')
-    f = open(path+filename, "rb")
+def pdf_download(request, filename):
+    # TODO: Use settings.STATIC_ROOT to specify static directory
+    #       below once static content serving is optimized.
+    path = os.path.join(os.getcwd(),'app/static/pdf',filename)
+    f = open(path, "rb")
     response = HttpResponse(FileWrapper(f), content_type='application/pdf')
-    response['Content-Disposition'] = 'attachment; filename=atmos.pdf'
-    f.close()
-    return response
-
-def pdf_pearl(request, filename):
-    path = os.path.abspath('/static/pdf/')
-    f = open(path+filename, "rb")
-    response = HttpResponse(FileWrapper(f), content_type='application/pdf')
-    response['Content-Disposition'] = 'attachment; filename=pearl.pdf'
-    f.close()
-    return response
-
-def pdf_arena(request, filename):
-    path = os.path.abspath('/static/pdf/')
-    f = open(path+filename, "rb")
-    response = HttpResponse(FileWrapper(f), content_type='application/pdf')
-    response['Content-Disposition'] = 'attachment; filename=arena.pdf'
-    f.close()
-    return response
-
-def pdf_vm(request, filename):
-    path = os.path.abspath('/static/pdf/')
-    f = open(path+filename, "rb")
-    response = HttpResponse(FileWrapper(f), content_type='application/pdf')
-    response['Content-Disposition'] = 'attachment; filename=vm.pdf'
-    f.close()
-    return response
-
-def pdf_su(request, filename):
-    path = os.path.abspath('/static/pdf/')
-    f = open(path+filename, "rb")
-    response = HttpResponse(FileWrapper(f), content_type='application/pdf')
-    response['Content-Disposition'] = 'attachment; filename=su.pdf'
+    response['Content-Disposition'] = 'inline; filename=' + filename
     f.close()
     return response
