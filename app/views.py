@@ -78,6 +78,7 @@ def resources(request):
 def transport(request):
     return render(request, 'transport.html')
 
+@login_required
 def pdf_download(request, filename):
     # TODO: Use settings.STATIC_ROOT to specify static directory
     #       below once static content serving is optimized.
