@@ -335,14 +335,6 @@ Main components
     font-size: 1.25rem;
     font-weight: bold;
 }
-@media only screen and (min-width: 768px) {
-    #main-nav li a {
-        height: 7.6vh;
-    }
-    #main-nav li {
-        height: unset;
-    }
-}
 #main-nav li a span {
     position: absolute;
     left: 50%;
